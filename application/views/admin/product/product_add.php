@@ -150,7 +150,7 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Product Image<span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <img id="previewimage" onclick="$('#uploadFile').click();" src="<?php echo base_url(); ?>images/product_image.gif" style="cursor: pointer;height: 210px;width: 210px;position: relative;z-index: 10;"/>
+                                                <img id="previewimage" onClick="$('#uploadFile').click();" src="<?php echo base_url(); ?>images/product_image.gif" style="cursor: pointer;height: 210px;width: 210px;position: relative;z-index: 10;"/>
                                                 <input type="file" id="uploadFile" name="product_image" style="position: absolute; margin: 0px auto; visibility: hidden;" accept="image/*" />
                                                 <div style="margin-top: 0px; color: red;"><?= form_error('product_image'); ?></div>
                                             </div>

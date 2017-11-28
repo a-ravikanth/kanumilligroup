@@ -24,32 +24,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="<?=base_url();?>js/imagezoom.js"></script>
 
 						<!-- FlexSlider -->
-  <script defer src="<?=base_url();?>js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="<?=base_url();?>css/flexslider.css" type="text/css" media="screen" />
+<?php /*?>  <script defer src="<?=base_url();?>js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="<?=base_url();?>css/flexslider.css" type="text/css" media="screen" /><?php */?>
 
-<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails"
-  });
-});
-</script>
+
 
 <style>
     .active
     {
-        border: 2px solid #0000ff;
+        border: 2px solid #ff5f00;
     }
     .active_size
     {
-        border: 2px solid #0000ff;
+        border: 2px solid #ff5f00;
     }
     .modal-header {
     border-bottom: 0px solid #e5e5e5;
     min-height: 16.4286px;
     padding: 15px;
+}
+.red{
+color:red;
 }
     </style>
 
@@ -60,10 +55,10 @@ $(window).load(function() {
                 require_once 'header.php';
                 ?>
 			<!--header-->
-	<div class="content">
+	<div class="content" id="productdetails">
 		<div class="single">
 			<div class="container">
-				<div class="single-grids single-info">
+				<div class="single-info">
 					<?php /*?><div class="col-md-4 single-grid1">
 						<h2>Category</h2>
 							<ul>
@@ -84,104 +79,33 @@ $(window).load(function() {
                                                 $price = $detail->product_price;
                                                 $image  =  $detail->product_image;       
                                     ?>
-                                      <div class="col-md-6">
-					<div class="single-grid npd wow fadeInLeft animated animated" data-wow-delay=".5s">
+                                 
+					<div class="col-md-4 col-sm-6  npd wow fadeInLeft animated animated" data-wow-delay=".5s">
                   		
-						<div class="flexslider">
-							<ul class="slides">
+						
+							<ul class="slider">
 								<li data-thumb="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>">
-                                 <div class="thumb-image"> <img src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" data-imagezoom="true" style="width: 100%; height: 425px;"> </div>
+                                 <div > <img class="img-responsive big-image" src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" > </div>
 								</li>
-                                <li data-thumb="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>">
-                                 <div class="thumb-image"> <img src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" data-imagezoom="true" style="width: 100%; height: 425px;"> </div>
-								</li>
-                                <li data-thumb="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>">
-                                 <div class="thumb-image"> <img src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" data-imagezoom="true" style="width: 100%; height: 425px;"> </div>
-								</li>
+                              
 							</ul>
 						</div>
-                        </div>
-					</div>	
-                    <div class="col-md-6">
+                       
+                    <div class="col-md-7  col-md-offset-1 col-sm-12">
 					<div class="simpleCart_shelfItem wow fadeInRight animated animated" data-wow-delay=".5s">		
                                             <h3 style="text-transform: capitalize;"><?=$detail->product_name?></h3>
-                                            <div class="single-rating">
-						<span class="starRating">
-							<input id="rating5" name="rating" value="5" checked="" type="radio">
-							<label for="rating5">5</label>
-							<input id="rating4" name="rating" value="4" type="radio">
-							<label for="rating4">4</label>
-							<input id="rating3" name="rating" value="3" type="radio">
-							<label for="rating3">3</label>
-							<input id="rating2" name="rating" value="2" type="radio">
-							<label for="rating2">2</label>
-							<input id="rating1" name="rating" value="1" type="radio">
-							<label for="rating1">1</label>
-                           
-						</span>
-                         <a href="#">Add Your Review</a>
-						
-					</div>
+                                            
                     <div class="galry">
 								<div>
-									<h2 class="item_price">Rs. <?=$detail->product_price;?></h2>
+									<?php /*?><h2 class="item_price">Rs. <?=$detail->product_price;?></h2><?php */?>
 								</div>
 								
 								<div class="clearfix"></div>
 							</div>
-                                                <p><?=$detail->product_description?></p>
-                        <script>
-      
-      	function setSizeValue(obj) {
-		$('.size_data').removeClass('active');
-		$("#"+obj).addClass('active');
-		$("#productsize").val(obj.slice(1));
-    }
-        </script>
-                                                    <ul class="size">
-                                                            <h3>Size</h3>
-                                                        
-							<?php
-                                                        $size_data = explode(",", $detail->size_id);
-                                                        $size =  $this->db->query("SELECT * FROM tbl_size");
-                                                        foreach ($size->result() as $value  ) {
-                                                            foreach ($size_data as $size_value) {
-                                                                if($size_value == $value->id)
-                                                                {?>
-                                                            <li>
-                                                                <a class="size_data " id="s<?php echo $value->id;?>" onClick="setSizeValue('s<?php echo $value->id;?>')"><?php echo $value->size;?></a>
-                                                            </li>
-                                                                    
-                                                                <?php }
-                                                            }
-                                                        }
-                                                        ?>
-                                                        </ul>
-                                                <script>
-      
-        function setColorValue(obj) {
-		$('.color').removeClass('active');
-		$("#"+obj).addClass('active');
-		var id = obj;
-		$("#productcolor").val(id);
-    }
-    function validateForm() {
-		var color = document.forms["productform"]["color"].value;
-		if (color == null || color == "") {
-			alert("Color must be Selected. Click for select.");
-			return false;
-		}
-		
-		var size = document.forms["productform"]["size"].value;
-		if (size == null || size == "") {
-			alert("Size must be Selected. Click for select.");
-			return false;
-		}
-	}
-  
-        </script>
+                                                <p style="text-align:justify;"><?=$detail->product_description?></p>
+                        
 	
-                                                        <ul class="size">
+                                                        <?php /*?><ul class="size">
                                                             <h3>Color</h3>
         						<?php
                                                         $color_data = explode(",", $detail->color_id);
@@ -197,21 +121,19 @@ $(window).load(function() {
                                                             }
                                                         }
                                                         ?>
-                                                        </ul>
+                                                        <div id="colorerror"></div>
+                                                        </ul><?php */?>
+                                                         
                                                 
                                                 	
 								
 							<div>
                                                             
                                                             <form action="<?=base_url();?>cart/add" method="post" name="productform" onSubmit="return validateForm()">
+                                                            
                                                        
-                                                       <h3 class="qty"> Qty :  
-                                                       				
-                                                        <input min="1" type="number" id="quantity" name="qty" value="1" class="form-control input-small">
-                                                        <input type="hidden" name="color" id="productcolor" value="" />
-                                                        <input type="hidden" name="size" id="productsize" value="" /></h3>
-                                                    <!--<input type="text" class="item_quantity" name="qty" value="1" />-->
-                                                    <div class="tag">
+                                                       
+                                                    <div class="tag col-md-12 npd">
                                                             <h3 class="category"> Category : <a style="text-transform: capitalize; cursor: pointer;"> 
                                                                                 <?php
                                                                                 $cat  = $this->db->query('SELECT * FROM tbl_category WHERE id ='.$detail->category_id.' ');
@@ -224,10 +146,10 @@ $(window).load(function() {
 							</div>
                                                     <?php echo form_hidden('id', $id);
                                                     echo form_hidden('name', $name);
-                                                    echo form_hidden('price', $price);
+                                                    
                                                     echo form_hidden('image', $image);
                                             ?> 
-                                                    <button type="submit" class="add-cart button button--moema button--border-thick button--size-s" name="action">ADD TO CART</button>
+                                                    <button type="button" class="add-cart button button--moema button--border-thick button--size-s" data-toggle="modal" data-target="#myModal">Enquiry Form</button>
                                                                     
                                                <?php
 //                                                echo form_close();
@@ -236,7 +158,7 @@ $(window).load(function() {
                                                             
                                                             
                                                             
-								<!--<a href="#" class="add-cart item_add">ADD TO CART</a>-->	
+								
                                                                 <br>
 							</div>
 			
@@ -250,7 +172,9 @@ $(window).load(function() {
 <!-- collapse -->
 		<div class="collpse">
 		<div class="container">
-		<div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
+        
+        
+		<!--<div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
 		  <div class="panel panel-default wow fadeInUp animated" data-wow-delay=".5s">
 			<div class="panel-heading" role="tab" id="headingOne">
 			  <h4 class="panel-title">
@@ -293,7 +217,93 @@ $(window).load(function() {
 			  </div>
 			</div>
 		  </div>
-		</div>   <?php }?>
+		</div>-->   <?php }?>
+        <div class="col-md-10 col-md-offset-1">
+        <table class="table-striped">
+        <thead>
+      <tr>
+        <th>Diameter (mm)</th>
+        <th>Working Length (mm)</th>
+        <th>Part Number</th>
+            <th>Pack Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>16.0</td>
+    <td>200</td>
+    <td>2608685860</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>16.0</td>
+    <td>400</td>
+    <td>2608685861</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>18.0</td>
+    <td>200</td>
+    <td>2608685862</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>18.0</td>
+    <td>2400</td>
+    <td>2608685863</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>20.0</td>
+    <td>200</td>
+    <td>2608685864</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>20.0</td>
+    <td>400</td>
+    <td>2608685865</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>22.0</td>
+    <td>400</td>
+    <td>2608685866</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>22.0</td>
+    <td>200</td>
+    <td>2608685867</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>25.0</td>
+    <td>400</td>
+    <td>2608685868</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>25.0</td>
+    <td>200</td>
+    <td>2608685869</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>28.0</td>
+    <td>400</td>
+    <td>2608685870</td>
+    <td>1</td>
+    </tr>
+        <tr>
+    <td>28.0</td>
+    <td>200</td>
+    <td>2608685871</td>
+    <td>1</td>
+    </tr>
+    </tbody>
+        </table>
+        </div>
 	</div>
 </div>
 <!-- collapse -->
@@ -322,20 +332,20 @@ $(window).load(function() {
 				
                                     
                                     
-                                    	 <div class="product-grid "  >
+                                    	 <div class="product-grid  col-md-3 c0l-sm-6 col-xs-12"  >
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
                                                     <img class=""   src="<?=base_url();?>/upload/product/<?=$value->id;?>/<?=$value->product_image;?>" style="width: 100%; height: 300px; cursor: pointer;"  alt="">
                                                     <div class="b-wrapper quicklook" id="<?=$value->id;?>" style="cursor: pointer;">
 							<h4 class="b-animate b-from-left  b-delay03">							
-							<button> + </button>
+							<button> Quick View </button>
 							</h4>
 							</div>
 						</div>
 						<div class="product-info simpleCart_shelfItem">
 							<div class="product-info-cust prt_name">
-                                                            <h4 style="color: #333333; text-transform: capitalize; font-size: 18px;"><?=$value->product_name;?></h4>								
-								<span class="item_price">Rs. <?=$value->product_price;?></span>
+                                                            <h4 style="color: #ff5f00; text-transform: capitalize; font-size: 14px;line-height: 21px;"><?=$value->product_name;?></h4>								
+								<?php /*?><span class="item_price">Rs. <?=$value->product_price;?></span><?php */?>
 								
 								<!--<input type="text" class="item_quantity" value="1" />-->
                                                             <!--<button type="submit" class="item_add items" name="action">View Look</button>-->  
@@ -360,7 +370,90 @@ $(window).load(function() {
 			</div>
 		</div>
 </div>
-                        <div class="modal fade" id="header-modal" aria-hidden="true" ></div>
+<div class="container">
+  
+  <!-- Trigger the modal with a button -->
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enquiry Form</h4>
+        </div>
+         <form name="enquiry" action="" onSubmit="return validate_form();" method="post">
+        <div class="modal-body">
+        <div class="row">
+        <div class="form-group col-md-6" >
+        <label for="Product Name" class="enquiry-label">Product Name</label><br>
+          <input type="text" readonly value="<?=$detail->product_name?>">
+
+         </div>
+       <div class="form-group col-md-6" >
+       <label for="name" class="enquiry-label"> Quantity <span class="red">*</span></label><br>
+          <input type="number" name="equantity" min="1" required>
+       </div>
+        <div class="form-group col-md-12" >
+        <label for="name" class="enquiry-label">Full Name <span class="red">*</span></label><br>
+        <span class="col-md-6 npl">
+          <input type="text"  name="efname" value="" placeholder="First Name" required>
+          <div id="error"></div>
+          </span>
+          <span class="col-md-6 npr">
+          <input type="text" name="elname" value=""  placeholder="Last Name" required="">
+          <div id="error"></div>
+          </span>
+          </div>
+         <div class="form-group col-md-6">
+        <label for="name" class="enquiry-label">Email <span class="red">*</span></label><br>
+          <input type="email" name="eemail" value="" required="">
+          <div id="error"></div>
+          </div>
+          <br>
+          <div class="form-group col-md-6">
+        <label for="name" class="enquiry-label">Contact Number <span class="red">*</span></label><br>
+          <input type="text" name="ephone" value=""  required="">
+          <div id="error"></div>
+          </div>
+          <div class="form-group col-md-12" >
+        <label for="name" class="enquiry-label">Address</label><br>
+        <span class="col-md-6 npl">
+          <input type="text" name="eaddress1" placeholder="Street Address Line 1 ">
+          </span>
+          <span class="col-md-6 npr">
+          <input type="text" name="eaddress2" placeholder="Street Address Line 2 ">
+          </span>
+          </div>
+          <div class="form-group col-md-6">
+           <label for="name" class="enquiry-label" value="">City</label><br>
+          <input type="text" name="ecity">
+          </div>
+          <div class="form-group col-md-6">
+           <label for="name" class="enquiry-label">State</label><br>
+          <input type="text" name="estate" value="">
+          
+          </div>
+          <div class="form-group col-md-2">
+         <input class="btn btn-danger" type="Submit"  value="Submit">
+         </div>
+        
+        </div>
+        </div>
+        </form>
+        <!--<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>-->
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+                       <!-- <div class="modal fade" id="header-modal" aria-hidden="true" ></div>-->
 	<!--footer-->
 		<?php
                 require_once 'footer.php';
@@ -376,17 +469,25 @@ $(window).load(function() {
                     
              $("#header-modal").delegate("#addcartform","submit",function(e){       
 		var color = document.forms["productformcart"]["color"].value;
+		var size = document.forms["productformcart"]["size"].value;
+		if ((color == null || color == "") && (size == null || size == "")) { 
+			document.getElementById("error").innerHTML ="Color and Size must be Selected. Click for select.";
+			return false;
+		}
 		if (color == null || color == "") {
-			alert("Color must be Selected. Click for select.");
+			document.getElementById("error").innerHTML ="Color must be Selected. Click for select.";
 			return false;
 		}
 		
-		var size = document.forms["productformcart"]["size"].value;
+		
 		if (size == null || size == "") {
-			alert("Size must be Selected. Click for select.");
+		document.getElementById("error").innerHTML ="Size must be Selected. Click for select.";
 			return false;
 		}
+		
+		
             });
+			
                     
                      
                          
@@ -422,4 +523,37 @@ $(window).load(function() {
                 });
 		
 		});
+	</script>
+    <script type="text/javascript">
+	function validate_form() {
+            if (enquiry.efname.value=="") {
+                document.getElementById("error").innerHTML ="Please Enter  Your FirstName";
+				document.enquiry.efname.focus();
+                 return false;
+				 }
+          if (!isNaN(enquiry.efname.value)){
+			document.getElementById("error").innerHTML ="Please Enter Only Characters";
+				document.enquiry.efname.select();
+                 return false;	
+			}
+			 if (enquiry.elname.value=="") {
+                document.getElementById("error").innerHTML ="Please Enter  Your LastName";
+				document.enquiry.elname.focus();
+                 return false;
+				 }
+          if (!isNaN(enquiry.elname.value)){
+			document.getElementById("error").innerHTML ="Please Enter Only Characters";
+				document.enquiry.elname.select();
+                 return false;	
+			}
+			
+			if(!(/^\d{10}$/).test(enquiry.ephone.value)){
+			 document.getElementById("error_phnum").innerHTML ="Please Enter  Correct Phone Number";
+			 	document.enquiry.ephone.focus();
+                return false;
+			}
+         alert("Form Submitted Successfully");
+			 return true;
+			 
+        }
 	</script>

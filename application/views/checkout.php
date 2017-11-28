@@ -106,7 +106,7 @@ $(window).load(function() {
                                         <div class="wow fadeInLeft" data-wow-delay="0.4s">
 						<span>Country<label>*</label></span> 	
                         <select name="country" class="countries" id="countryId" >
-                            <option  value="">Select Country</option>
+                            <option  name="country" value="">Select Country</option>
                         </select>
                                              <!-- <input  type="text"  value="" required=""  placeholder="Country" name="country" >-->
 					 </div>
@@ -114,14 +114,14 @@ $(window).load(function() {
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
 						 <span>Province / Territory<label>*</label></span>
                          <select name="province" class="states" id="stateId">
-                            <option  value="">Select State</option>
+                            <option  name="province" value="">Select State</option>
                         </select>
                              <!--<input  type="text"  value="" required=""   placeholder="Province / Territory" name="province" >-->
                                          </div>
                                          <div class="wow fadeInRight" data-wow-delay="0.4s">
 						<span>City<label>*</label></span>
                         <select name="city" class="cities" id="cityId">
-                            <option value="">Select City</option>
+                            <option name="city" value="">Select City</option>
                         </select>
                         
 						<!--<input  type="text"  value=""  required="" placeholder="City" name="city" >-->
@@ -150,7 +150,7 @@ $(window).load(function() {
         padding: 0.6em 2em;
         text-transform: uppercase;
         transition: all 0.5s ease 0s;" type="submit" value="Continue" name="cdetail">-->
-        <button type="submit" id="btn-progress" name="cdetail" type="button" class="btn btn-success">Pay</button>
+        <button type="submit" id="btn-progress" name="cdetail" type="button" class="btn btn-success">Continue</button>
     </div>
                         </form>
 			

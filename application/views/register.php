@@ -98,7 +98,7 @@ $(window).load(function() {
 					 </div>-->
                               <div class="register-but">
         <input  class="submit-btn" style="  background-color: #fff;
-                    border: 2px solid #ff5f00;
+                    border: 2px solid #0D4B8e;
                     color: #000;
                     display: inline-block;
                     font-size: 1.2em;

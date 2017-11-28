@@ -8,8 +8,9 @@
 .sky-form h4{
 	padding: 10px 0;
 	text-transform: uppercase;
-	color: #000;
-	font-size:1.1em;
+	color: rgba(0, 166, 214, 1);
+	font-size: 1.1em;
+	font-weight: 600;;
 }
 section.sky-form{
 	border-top:1px solid #eee;

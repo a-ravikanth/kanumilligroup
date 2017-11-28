@@ -30,7 +30,7 @@
     <style>
     .active1
     {
-        border: 2px solid #0000ff;
+        border: 2px solid #ff5f00;
     }
     .modal-header {
     border-bottom: 0px solid #e5e5e5;
@@ -66,72 +66,8 @@
 	
     </div>
 			 <div class="container">
-		
-		 <div class="col-md-9 col-sm-12 product-model-sec wow fadeInUp animated animated" data-wow-delay=".5s">
-                     <?php
-                     if(!empty($productlist))
-                                    {
-                                        foreach ($productlist as $post)
-                                        {
-                                            $id = $post->id;
-                                            $name = $post->product_name;
-                                            $description = $post->product_description;
-                                            $price = $post->product_price;
-                                            $image = $post->product_image;
-                                        ?>
-                     
-					 <div class="product-grid "  >
-						<div class="more-product"><span> </span></div>						
-						<div class="product-img b-link-stripe b-animate-go  thickbox">
-                                                    <img class=""   src="<?=base_url();?>/upload/product/<?=$post->id;?>/<?=$post->product_image;?>" style="width: 100%; height: 240px; cursor: pointer;"  alt="">
-                                                    
-                                                    <div class="b-wrapper quicklook" id="<?=$post->id;?>" style="cursor: pointer;">
-							<h4 class="b-animate b-from-left  b-delay03">							
-							<button> Quick View </button>
-							</h4>
-							</div>
-						</div>
-						<div class="product-info simpleCart_shelfItem">
-							<div class="product-info-cust prt_name">
-                                                            <h4 style="color: #ff5f00; text-transform: capitalize; font-size: 17px;"><?=$post->product_name;?></h4>								
-								<span class="item_price">Rs. <?=$post->product_price;?></span>
-								
-				                                
-								<!--<input type="button" class="item_add items" value="+">-->
-								<div class="clearfix"> </div>
-							</div>												
-						</div>
-					</div>
-                                    <?php } }?>
-                     <div class="col-md-12">
-                            <div style="text-align: right;"> 
-                        <ul class="pagination" style="">
-                             <?php foreach ($linked as $link) {
-                                 ?>
-                                  <li><?=$link?></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                     </div>
-				</div>	
-                
-			<div class="rsidebar span_1_of_left">
-		<?php /*?>		 <section  class="sky-form">
-					 <div class="product_right">
-						 <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories</h4>
-                                                  <?php
-                                                foreach ($category_list as $category)
-                                                {
-                                                ?>
-						 <div class="tab1">
-							 <ul class="place">								
-                                                             <li class="sort" style="text-transform: capitalize;"><a href="<?=base_url();?>category/<?=$category->id;?>"><?=$category->category_name?></li>
-                                                                <div class="clearfix"> </div>
-							  </ul>
-                                	      </div>
-                                                <?php }?>
-                                         </div>
-				 </section><?php */?>
+            <?php /*?><div class="rsidebar span_1_of_left">
+	
 				 
 					<section  class="sky-form">
 				   <div class="sidebar-row">
@@ -141,21 +77,21 @@
                                                 {
                                                 ?>
 						<ul class="faq">
-						<!--	<li class="item1"><a href="#">Frocks &amp; Dresses<span class="glyphicon glyphicon-menu-down"></span></a>-->								 <li class="sort subitem1" style="text-transform: capitalize;"><a href="<?=base_url();?>category/<?=$category->id;?>"><?=$category->category_name?>
+						<li class="item1"><a href="#">Frocks &amp; Dresses<span class="glyphicon glyphicon-menu-down"></span></a>								 <li class="sort subitem1" style="text-transform: capitalize;"><a href="<?=base_url();?>category/<?=$category->id;?>"><?=$category->category_name?>
                          <?php 
                                                 foreach ($subcate as $sub){
                                                     if($category->id==$sub->parent_category_id)
                                                     {
                                                 ?>
 								<ul style="display: none;">
-                                <li><a style="text-transform: capitalize;" class="list1" href="<?php echo base_url()?>ProductList/<?php echo $category->id.'/'.$sub->subcat_id;?>"><?= $sub->subcategory_name;?></a></li>
-									<!--<li class="subitem1"><a href="#">Party Wear</a></li>										
+                                <li><a  style="text-transform: capitalize;" class="list1" href="<?php echo base_url()?>ProductList/<?php echo $category->id.'/'.$sub->subcat_id;?>"><?= $sub->subcategory_name;?></a></li>
+									<li class="subitem1"><a href="#">Party Wear</a></li>										
 									<li class="subitem1"><a href="#">Night Wear</a></li>										
-									<li class="subitem1"><a href="#">Bath Time</a></li>		-->								
+									<li class="subitem1"><a href="#">Bath Time</a></li>									
 								</ul>
                                 <?php } }?>
 							</li>
-						<!--	<li class="item2"><a href="#">Shorts &amp; Jeans<span class="glyphicon glyphicon-menu-down"></span></a>
+						<li class="item2"><a href="#">Shorts &amp; Jeans<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul style="display: none;">
 									<li class="subitem1"><a href="#">Girls</a></li>										
 									<li class="subitem1"><a href="#">Boys</a></li>										
@@ -168,11 +104,11 @@
 									<li class="subitem1"><a href="#">Rain Jackets</a></li>										
 									<li class="subitem1"><a href="#">Caps &amp; Gloves</a></li>										
 								</ul>
-							</li>-->
+							</li>
 						</ul>
                          <?php }?>
                          
-						<!-- script for tabs -->
+					
 						<script type="text/javascript">
 							$(function() {
 							
@@ -197,7 +133,7 @@
 							
 							});
 						</script>
-						<!-- script for tabs -->
+						
 					</div>
                     </section>
 				 <section  class="sky-form">
@@ -217,9 +153,9 @@
                             
                        	 </div> 
                          </div>          
-						<!--<div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header" style="left: 4.24444%; width: 73.5333%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 4.24444%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 77.7778%;"></a></div>-->							
-						<!--<input id="amount" style="border: 0;  font-weight: normal;" type="text">
-						<script type="text/javascript">//<![CDATA[ 
+						<div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header" style="left: 4.24444%; width: 73.5333%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 4.24444%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 77.7778%;"></a></div>							
+						<input id="amount" style="border: 0;  font-weight: normal;" type="text">
+						<script type="text/javascript"> 
 							$(window).load(function(){
 							 $( "#slider-range" ).slider({
 										range: true,
@@ -231,10 +167,10 @@
 							 });
 							$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
-							});//]]>  
-						</script>-->
+							}); 
+						</script>
 						<script type="text/javascript" src="js/jquery-ui.js"></script>
-						<!---->
+						
 					</div>
 				   </section>
                    <section  class="sky-form">
@@ -258,18 +194,74 @@
 				    </div>
 				  </div>
 				<section>
-				   <!---->
+				
 					 <script type="text/javascript" src="<?=base_url();?>js/jquery-ui.min.js"></script>
 					 <link rel="stylesheet" type="text/css" href="<?=base_url();?>css/jquery-ui.css">
 					
   
 				   
 							   
-			 </div>				 
+			 </div><?php */?>
+		
+		 <div class="col-md-12 col-sm-12 product-model-sec wow fadeInUp animated animated" data-wow-delay=".5s">
+                     <?php
+                     if(!empty($productlist))
+                                    {
+                                        foreach ($productlist as $post)
+                                        {
+                                            $id = $post->id;
+                                            $name = $post->product_name;
+                                            $description = $post->product_description;
+                                            $price = $post->product_price;
+                                            $image = $post->product_image;
+                                        ?>
+                     <div class="more products col-md-3">
+					 <div class="product-grid" >
+						 <span> </span>				
+						<div class="product-img b-link-stripe b-animate-go  thickbox">
+                                                   <a href="<?=base_url();?>ProductDetail/<?=$post->id;?>">
+                                                    <img class="img-responsive products-catlog"   src="<?=base_url();?>/upload/product/<?=$post->id;?>/<?=$post->product_image;?>" style="width: 100%;  cursor: pointer;"  alt=""></a>
+                                                    
+                                                    
+						</div>
+                        <div class="product-info simpleCart_shelfItem">
+							<div class="product-info-cust prt_name galy-info">
+                                                            <h4 style="color: #000;margin: 0.5em 0 0; text-transform: capitalize; line-height: 21px; font-size: 14px;"><?=$post->product_name;?></h4>								
+								<?php /*?><span class="item_price">Rs. <?=$post->product_price;?></span><?php */?>
+                                </div>
+                                	
+								
+				                                
+								<!--<input type="button" class="item_add items" value="+">-->
+								<div class="clearfix"> </div>
+							</div>
+                            <div class="">
+                                <h4 class="blue-text text-center"><a href="<?=base_url();?>ProductDetail/<?=$post->id;?>">More Details</a></h4>
+                                </div>	
+																		
+						</div>
+                        
+					</div>
+                                    <?php } }?>
+                     <div class="col-md-12">
+                            <div style="text-align: right;"> 
+                        <ul class="pagination" style="">
+                             <?php foreach ($linked as $link) {
+                                 ?>
+                                  <li><?=$link?></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                     </div>
+				</div>	
+                
+							 
 	      </div>
 		</div>
 </div>
-                        <div class="modal fade" id="header-modal" aria-hidden="true"></div>
+                        <div class="modal fade" id="header-modal" aria-hidden="true">
+                        
+                         </div>
 	<!--footer-->
 		<?php require_once 'footer.php';?>
 	<!--footer-->
@@ -281,8 +273,10 @@
             $("#header-modal").delegate("#addcartform","submit",function(e){       
                     var color = document.forms["productformcart"]["color"].value;
                     if (color == null || color == "") {
-                            alert("Color must be Selected. Click for select.");
-                            return false;
+							document.getElementById("error").innerHTML ="Color must be Selected. Click for select.";
+                            
+							return false;
+                           
                     }
 
                     var size = document.forms["productformcart"]["size"].value;
@@ -309,20 +303,7 @@
                     });
 
                     
-                    $('.quicklook').click(function() {
-                        var product_id = $(this).attr('id');
-                        $.ajax({
-                                type: "POST",
-                                url: "<?=base_url();?>product/SingleProuctDetail",
-                                data: {product_id: product_id},
-                                dataType: "json",
-                                success: function(data) {
-                                     $("#header-modal").html(data.success);
-                                      $('#header-modal').modal('show');  
-                                }
-                               
-                        });
-                });
+                   
         });
 	</script>
 </body>

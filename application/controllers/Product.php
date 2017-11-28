@@ -109,6 +109,7 @@ class Product extends CI_Controller {
             $detail = '';
             $base  = base_url();
             $product_id = $this->input->post('product_id');
+			//$product_id = $this->uri->segment(3);
             $output['SingleProuctDetail'] = $this->product_model->SingleProuctDetail($product_id);
             $output['size_list'] = $this->Category_Model->get_list_size();
             $output['color_list'] = $this->Category_Model->get_list_color();

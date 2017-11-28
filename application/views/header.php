@@ -1,5 +1,5 @@
 <link href="<?=base_url();?>css/wow.css" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Glegoo' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
 <div class="header">
 			<div class="header-top">
 			<div class="container">
@@ -10,9 +10,20 @@
 						<option value="2">French</option>
 						<option value="3">German</option>
 					</select>
-   			</div>-->
+   			</div>--><div class="col-md-4">
+                <h3 class="white-text wow fadeInLeft animated" wow-data-delay=".4s">Kanumilli Infra Solutions Pvt.Ltd.</h3>
+            </div>
+            <div class="search-box">
+					<div id="sb-search" class="sb-search wow zoomIn animated animated" data-wow-delay=".7s">
+						<form>
+							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"> </span>
+						</form>
+					</div>
+				</div>
                             <div class="top-right wow zoomIn animated animated" data-wow-delay=".7s" style="width: 350px;">
-				<ul>
+				<?php /*?><ul>
                                      <?php
                                     if(!empty($this->session->userdata('userid')))
                                     {?>
@@ -24,7 +35,7 @@
                                             <li  class="text"><a href="<?=base_url();?>register">Register</a></li>
                                    <?php }
                                     ?>
-                                    <!--<li class="text"><a href="<?=base_url();?>login">login</a></li>-->
+                                    <li class="text"><a href="<?=base_url();?>login">login</a></li>
 					<li><div class="cart box_1">
                                                 <a href="<?=base_url()?>cart">Cart
                                                             <?php if(!empty($this->cart->contents()))
@@ -36,12 +47,12 @@
                                                                 echo "0";
                                                             }
                                                     ?>   
-                                                    <!--<span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)-->
+                                                    
 							</a>	
-							<!--<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>-->
+							
 							<div class="clearfix"> </div>
 						</div></li>
-				</ul>
+				</ul><?php */?>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -51,40 +62,55 @@
 <!--/.content-->
 <div class="content white">
 	<nav class="navbar navbar-default " role="navigation">
-	    <div class="navbar-header  col-md-offset-6  wow zoomIn animated animated" data-wow-delay=".7s">
-	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	    <div class="navbar-header col-md-2 wow zoomIn animated animated" data-wow-delay=".7s">
+	        
+                <h1 class="navbar-brand"><a  href="<?=base_url();?>"dashboard><img class="img-responsive logo" src="<?=base_url();?>img/kanumilli-logo2.png"/></a></h1>
+	    </div>
+	    <!--/.navbar-header-->
+	   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		        <span class="sr-only">Toggle navigation</span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-                <h1 class="navbar-brand"><a  href="<?=base_url();?>"dashboard>Developer</a></h1>
-	    </div>
-	    <!--/.navbar-header-->
-	
-	    <div class="collapse navbar-collapse  col-md-offset-2" id="bs-example-navbar-collapse-1">
+	    <div class="collapse navbar-collapse col-md-10" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-                    <li><a href="<?=base_url();?>dashboard">Home</a></li>
+                    <li style="text-transform: capitalize;"><a href="<?=base_url();?>dashboard">Home</a></li>
                          <?php
                         foreach ($category_list as $category)
                         {
                         ?>
 		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$category->category_name?><b class="caret"></b></a>
+		            <a style="text-transform: capitalize;" href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$category->category_name?><b class="caret"></b></a>
 		            <ul class="dropdown-menu multi-column columns-3">
+                    <div class="col-md-8 col-sm-8">
 			            <div class="row">
                                            <?php 
                                                 foreach ($subcate as $sub){
                                                     if($category->id==$sub->parent_category_id)
                                                     {
                                                 ?>
-				            <div class="col-sm-4">
+                                                
+				            <div class="col-sm-4 npd">
 					            <ul class="multi-column-dropdown">
                                                         <li><a style="text-transform: capitalize;" class="list1" href="<?php echo base_url()?>ProductList/<?php echo $category->id.'/'.$sub->subcat_id;?>"><?= $sub->subcategory_name;?></a></li>
 					            </ul>
 				            </div>
-                                                <?php } }?>
-				    </div>
+                          
+                               <?php } }?>
+                               
+                                 </div>
+                                  </div>
+                            <div class="col-sm-4 menu-grids">
+											
+												<div class="new-add img-responsive">
+													
+												</div>	
+											
+										</div>
+                            
+                                             
+				   
 		            </ul>
 		        </li>
                         <?php }?>
@@ -95,15 +121,7 @@
 	</nav>
 	<!--/.navbar-->
 </div>
-			   <div class="search-box">
-					<div id="sb-search" class="sb-search wow zoomIn animated animated" data-wow-delay=".7s">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
-						</form>
-					</div>
-				</div>
+			   
 			
 <!-- search-scripts -->
 					<script src="<?=base_url();?>js/classie.js"></script>

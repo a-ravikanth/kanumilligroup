@@ -48,7 +48,7 @@ class Product extends CI_Controller {
             $this->form_validation->set_rules('product_description', 'Product Description', 'required');
             $this->form_validation->set_rules('product_category', 'Product Category', 'required');
 //            $this->form_validation->set_rules('product_type', 'Product Type', 'required');
-            $this->form_validation->set_rules('rate', 'Product Price', 'required');
+            $this->form_validation->set_rules('rate', 'Product Price');
             if($_FILES['product_image']['name']=='')
                        $this->form_validation->set_rules('product_image','Image','required');
              

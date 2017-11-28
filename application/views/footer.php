@@ -49,7 +49,7 @@
 						<a href="#"><i class="icon3"></i></a>
 						<a href="#"><i class="icon4"></i></a>
 					</div>
-					<p>Copyright &copy; 2016 Developer</p>
+					<p>Copyright &copy; 2017 kanumilli Infra Solutions Pvt.Ltd.</p>
 					</div>
 				<div class="clearfix"></div>
 				</div>
