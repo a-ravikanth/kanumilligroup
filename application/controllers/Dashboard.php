@@ -11,8 +11,8 @@ class Dashboard extends CI_Controller {
             $this->load->model('Category_Model');
             $this->load->model('Subcategory_Model');
             $this->load->library('cart');
-            $this->load->helper('url');  
-            $this->load->helper('form');  
+            $this->load->helper('url');
+            $this->load->helper('form');
             $this->load->library('session');
             $this->load->database();
             $this->load->library('encrypt');
@@ -25,48 +25,50 @@ class Dashboard extends CI_Controller {
             $data['slider'] = $this->Dashboard_Model->get_slider();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
             $data['latest_product'] = $this->Dashboard_Model->latest_product();
+            $data['popular_product_powertool'] = $this->Dashboard_Model->popular_product(6);
+            $data['popular_product_accessories'] = $this->Dashboard_Model->popular_product(7);
             $data['popular_product'] = $this->Dashboard_Model->popular_product();
             $data['feature_product'] = $this->Dashboard_Model->feature_product();
             $this->load->view('dash',$data);
         }
-	
+
         public function mobile_shop()
         {
             $data['category_list'] = $this->Category_Model->get_list();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
             $this->load->view('mobile_shop',$data);
         }
-	
+
 	public function cart()
 	{
             $data['category_list'] = $this->Category_Model->get_list();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
             $this->load->view('cart',$data);
         }
-        
+
         public function product_detail($product)
 	{
             $data['products'] = $this->dashboard_model->get_all();
             $data['products_detail'] = $this->dashboard_model->products_detail($product);
-            $this->load->view('product_detail',$data);  
+            $this->load->view('product_detail',$data);
         }
         public function shipping()
 	{
             $data['category_list'] = $this->Category_Model->get_list();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
-            $this->load->view('shipping',$data);  
+            $this->load->view('shipping',$data);
         }
         public function term()
 	{
             $data['category_list'] = $this->Category_Model->get_list();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
-            $this->load->view('term',$data);  
+            $this->load->view('term',$data);
         }
         public function faqs()
 	{
             $data['category_list'] = $this->Category_Model->get_list();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
-            $this->load->view('faqs',$data);  
+            $this->load->view('faqs',$data);
         }
-        
+
 }
