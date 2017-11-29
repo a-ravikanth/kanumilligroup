@@ -12,8 +12,8 @@ class Product extends CI_Controller {
             $this->load->model('Subcategory_Model');
             $this->load->model('Product_Model',"product_model");
             $this->load->library('cart');
-            $this->load->helper('url');  
-            $this->load->helper('form');  
+            $this->load->helper('url');
+            $this->load->helper('form');
             $this->load->library('session');
             $this->load->database();
             $this->load->library('encrypt');
@@ -23,14 +23,14 @@ class Product extends CI_Controller {
 
         public function index()
         {
-         
+
         }
-	
+
         public function allProductList($cat_id,$subcat_id)
         {
-            
+
             $config = array();
-            $config["base_url"] = base_url() . "ProductList/$cat_id/$subcat_id";  
+            $config["base_url"] = base_url() . "ProductList/$cat_id/$subcat_id";
             $total_row   = $this->product_model->getproductList_count($cat_id,$subcat_id);
             $config["total_rows"] = $total_row;
             $config["per_page"] = 16;
@@ -50,22 +50,22 @@ class Product extends CI_Controller {
             }
             else{
                    $page = 0;
-            } 
-  
+            }
+
             $data["productlist"] = $this->product_model->getproductListCategoryWise($config["per_page"], $page,$cat_id,$subcat_id);
             $str_links = $this->pagination->create_links();
             $data["linked"] = explode('&nbsp;',$str_links );
-          
-            
+
+
             $data['category_list'] = $this->Category_Model->get_list();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
             $data['subcat_id'] = $subcat_id;
             $data['cat_id'] = $cat_id;
-            
-            
+
+
             $this->load->view('product',$data);
         }
-        
+
         public function oneProductdetail()
         {
             $final_data = '';
@@ -73,7 +73,7 @@ class Product extends CI_Controller {
             $data['product_detail'] = $this->product_model->productDetailsignle($product_id);
             foreach($data['product_detail'] as $post)
             {
-                $related_product = $post->related_product; 
+                $related_product = $post->related_product;
                 $related_id = explode(",", $related_product);
                 foreach ($related_id as $post)
                 {
@@ -83,8 +83,8 @@ class Product extends CI_Controller {
                 }
                 $data['related_product_detail'] = $final_data;
             }
-          
-            
+
+
             $data['category_list'] = $this->Category_Model->get_list();
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
             $this->load->view('productDetails',$data);
@@ -120,7 +120,7 @@ class Product extends CI_Controller {
                 $detail.= "<div class='modal-dialog' role='document'>
 					<div class='modal-content modal-info'>
 						<div class='modal-header'>
-                                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>				
+                                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
 						</div>
 						<div class='modal-body modal-spa'>
 								<div class='col-md-5 span-2'>
@@ -156,12 +156,12 @@ class Product extends CI_Controller {
 
                     }
                 }
-                        
+
                                                                      $detail.=  "</span>
 									<div class='clearfix'></div>
 									</div>
 									<br>
-									
+
 									<div class='add-to'>
 								                <form action='".$base."cart/add' method='post' name='productformcart' id='addcartform'>
                                                                                     <input type='hidden' name='color' id='colorProduct' value=''>
@@ -180,13 +180,13 @@ class Product extends CI_Controller {
 							</div>
 						</div>
 					</div>";
-                
-                
+
+
                 $data['success'] = $detail;
             }
              echo json_encode($data);
         }
-        
+
     public function getUserEmail()
     {
 		if (!isset($_GET['term']))
@@ -199,9 +199,35 @@ class Product extends CI_Controller {
 		{
 			$data[] = array(
 				'label' => $row->product_name,
-				'value' => $row->product_name);  
+				'value' => $row->product_name);
 		}
 		echo json_encode($data);
 		flush();
 	}
+
+  public function submitEqform(){
+    if($this->input->post()){
+      $eqdata = array(
+        'eq_fname'        => $this->input->post('fname'),
+        'eq_lname'        => $this->input->post('lname'),
+        'eq_product_name' => $this->input->post('product'),
+        'eq_qty'          => $this->input->post('qty'),
+        'eq_email'        => $this->input->post('email'),
+        'eq_phone'        => $this->input->post('phone'),
+        'eq_address1'     => $this->input->post('add1'),
+        'eq_address2'     => $this->input->post('add2'),
+        'eq_city'         => $this->input->post('city'),
+        'eq_state'        => $this->input->post('state')
+      );
+      $res = $this->product_model->productEnquiry($eqdata);
+      if($res){
+        $result = ['status'=>TRUE, 'message'=>'Your product query sent to enquiry deportment. We will get back to you soon.'];
+        echo json_encode($result);
+      }else{
+        $result = ['status'=>FALSE, 'message'=>'Some thing went Worng. Please try again.'];
+        echo json_encode($result);
+      }
+    }
+    //echo json_encode($_POST);
+  }
 }

@@ -134,9 +134,11 @@ $route['account/size'] = 'admin/size';
 $route['account/size-color/(:num)'] = 'admin/size/editSize/$1';
 $route['account/size-delete/(:num)'] = 'admin/size/deleteSize/$1';
 
+/*---------------------Enquiry-----------------------------------*/
+$route['account/enquiry'] = 'admin/enquiry';
+$route['account/enquiry-delete/(:num)'] = 'admin/enquiry/deleteEnquiry/$1';
 
 
 $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = true;
-

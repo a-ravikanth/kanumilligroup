@@ -32,7 +32,7 @@
                         </div>
                     </li>
                 </ul>
-                
+
                 <ul class="nav-header pull-left">
                     <li>
                         <div class="btn-group">
@@ -56,7 +56,7 @@
                         </div>
                     </li>
                 </ul>
-                <ul class="nav-header pull-left">
+                <!-- <ul class="nav-header pull-left">
                     <li>
                         <div class="btn-group">
                             <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
@@ -65,21 +65,21 @@
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li>
                                     <a tabindex="-1" href="<?= base_url();?>account/color">
-                                        <!--<i class="si si-envelope-open pull-right"></i>-->
+
                                        All Color
                                     </a>
                                 </li>
                                 <li>
                                     <a tabindex="-1" href="<?= base_url();?>account/color-add">
-<!--                                        <i class="si si-user pull-right"></i>-->
+
                                        Create Color
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                </ul>
-                <ul class="nav-header pull-left">
+                </ul> -->
+                <!-- <ul class="nav-header pull-left">
                     <li>
                         <div class="btn-group">
                             <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
@@ -88,22 +88,22 @@
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li>
                                     <a tabindex="-1" href="<?= base_url();?>account/size">
-                                        <!--<i class="si si-envelope-open pull-right"></i>-->
+
                                        All Size
                                     </a>
                                 </li>
                                 <li>
                                     <a tabindex="-1" href="<?= base_url();?>account/size-add">
-<!--                                        <i class="si si-user pull-right"></i>-->
+
                                        Create Size
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                </ul>
-                
-                <ul class="nav-header pull-left">
+                </ul> -->
+
+                <!-- <ul class="nav-header pull-left">
                     <li>
                         <div class="btn-group">
                             <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
@@ -112,15 +112,15 @@
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li>
                                     <a tabindex="-1" href="<?= base_url();?>account/customer-list">
-                                        Customer List       
+                                        Customer List
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                </ul>
-                
-                <ul class="nav-header pull-left">
+                </ul> -->
+
+                <!-- <ul class="nav-header pull-left">
                     <li>
                         <div class="btn-group">
                             <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
@@ -140,8 +140,8 @@
                             </ul>
                         </div>
                     </li>
-                </ul>
-                   <ul class="nav-header pull-left">
+                </ul> -->
+                   <!-- <ul class="nav-header pull-left">
                     <li>
                         <div class="btn-group">
                             <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
@@ -161,8 +161,23 @@
                             </ul>
                         </div>
                     </li>
+                </ul> -->
+                <ul class="nav-header pull-left">
+                    <li>
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
+                              Enquiry
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a tabindex="-1" href="<?= base_url();?>account/enquiry">
+                                        Enquiry List
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
-                
                 <ul class="nav-header pull-left">
                     <li>
                         <div class="btn-group">
@@ -184,7 +199,7 @@
                         </div>
                     </li>
                 </ul>
-             
+
                 <ul class="nav-header pull-right">
                     <li>
                         <div class="btn-group">
