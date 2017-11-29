@@ -64,8 +64,10 @@ $(window).load(function() {
     </div>
 <!-- contact -->
 <div class="contact">
-<h3 class="title text-center">How To <span> Find Us</span></h3>
-			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur </p>
+<div class="gallery">
+<h3 class="text-center">How To Find Us</h3>
+</div>
+			<p class="text-center"></p>
 <div class="address"><!--address-->
 		<div class="container">
         
@@ -85,17 +87,17 @@ $(window).load(function() {
 				<div class="col-md-6 address-right">
 					<div class="address-info wow fadeInRight animated animated" data-wow-delay=".5s" >
 						<h4>ADDRESS</h4>
-						<p>123 San Sebastian, CG 09-123 Ba,Block(#456),Hill Towers 4567 New York City USA.</p>
+						<p>Plot No-C60,Film Nagar,Road No-1,Jubilee Hills, Hyderabad, Telangana-500033.</p>
 					</div>
 					<div class="address-info address-mdl wow fadeInRight animated animated" data-wow-delay=".7s" >
 						<h4>PHONE </h4>
-						<p>+222 111 333 4444</p>
-						<p>+222 111 333 5555</p>
+						<p>+91 9100725555</p>
+						<p>+91 8008674444</p>
 					</div>
 					<div class="address-info wow fadeInRight animated animated" data-wow-delay=".6s" >
 						<h4>MAIL</h4>
-						<p><a href="mailto:example@mail.com"> mail@example.com</a></p>
-						<p><a href="mailto:example@mail.com"> mail2@example.com</a></p>
+						<p><a href="info@kanumilligroup.com"> info@kanumilligroup.com</a></p>
+						<p><a href="prasad@kanumilligroup.com"> prasad@kanumilligroup.com</a></p>
 					</div>
 				</div>
 			</div>	

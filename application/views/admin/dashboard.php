@@ -24,7 +24,7 @@ if($this->session->email == "")
     </head>
     <body>
             <div id="page-container" class="side-scroll header-navbar-fixed">
-         
+
            <?php //  require_once ('sidebar.php');?>
          <?php      require_once('header.php'); ?>
 
@@ -33,8 +33,8 @@ if($this->session->email == "")
                 <!-- Page Header -->
                 <div class="content bg-image overflow-hidden" style="background-image: url('<?php echo base_url(); ?>/assets/img/photos/photo3@2x.jpg');">
                     <div class="push-50-t push-15">
-                        <h1 class="h2 text-white animated zoomIn">Dashboard</h1>
-                        <h2 class="h5 text-white-op animated zoomIn">Welcome Administrator</h2>
+                        <h1 class="h2 text-white animated zoomIn">Kanumilli Group</h1>
+                        <h2 class="h5 text-white-op animated zoomIn">Welcome <?php echo $this->session->name; ?></h2>
                     </div>
                 </div>
                 <!-- END Page Header -->
@@ -56,7 +56,7 @@ if($this->session->email == "")
                             <div class="font-w700 text-gray-darker animated fadeIn">Total Earnings</div>
                             <div class="text-muted animated fadeIn"><small><i class="si si-calendar"></i> All Time</small></div>
                             <a class="h2 font-w300 text-primary animated flipInX" >
-                             Rs.    <?php 
+                             Rs.    <?php
                                  foreach ($totalsum as $sum)
                                  {
                                      echo $sum->sum;
@@ -68,7 +68,7 @@ if($this->session->email == "")
                             <div class="font-w700 text-gray-darker animated fadeIn">Average Sale</div>
                             <div class="text-muted animated fadeIn"><small><i class="si si-calendar"></i> All Time</small></div>
                             <a class="h2 font-w300 text-primary animated flipInX" >
-                                Rs.  <?php 
+                                Rs.  <?php
                                  foreach ($totalsum as $avg)
                                  {
                                      $sum =  $avg->sum;
@@ -83,12 +83,12 @@ if($this->session->email == "")
             <!-- Page Content -->
                     <!-- Page Header -->
                 <div class="content">
-             
+
                     <div class="block">
-                        
+
                          <div class="block-header">
                             <h3 class="block-title col-lg-6" style="text-align: left;">
-                            Today  Sales Report 
+                            Today  Sales Report
                             </h3>
                             <span class="col-lg-6" style="text-align: right;">
                                   <!--<a class="btn btn-default btn-rounded btn-condensed btn-sm" data-toggle="tooltip" title="Add New Product" href="<?=base_url();?>account/product-add"><span title="Add New Product"class="fa fa-plus"></span></a>-->
@@ -118,19 +118,19 @@ if($this->session->email == "")
                                     {
                                     foreach ($todaysalelist as $value)
                                     {
-                                    
+
                                     ?>
                                    <tr>
                                         <td><?=$value->id?></td>
                                         <td><?=$value->issue_date;?></td>
                                         <td><?=$value->due_date?></td>
-                                        <td><?php 
+                                        <td><?php
                                             if(($value->created_by) == 0)
-                                            { 
+                                            {
                                                 echo 'Website';
-                                            } 
+                                            }
                                             else
-                                            { 
+                                            {
                                                 echo  "Admin";
                                             }?>
                                         </td>
@@ -150,8 +150,8 @@ if($this->session->email == "")
                                                <span class="label label-success">Shipped</span></td>
                                           <?php }
                                             ?>
-                                            
-                                            
+
+
                                     <td>
                                         <a class="btn-sm editField" href="<?=base_url();?>account/sale-detail/<?=$value->id?>" data-toggle="tooltip" data-placement="top" title="" data-product_id="71" data-href="" data-type="sale_detail" data-original-title="View Sale detail">
                                         <span class="fa fa-eye"></span>
@@ -164,11 +164,11 @@ if($this->session->email == "")
                             </table>
                         </div>
                     </div>
-                 
 
-                 
+
+
                     <div class="block">
-                        
+
                          <div class="block-header">
                             <h3 class="block-title col-lg-6" style="text-align: left;">
                             Today New User Register
@@ -198,7 +198,7 @@ if($this->session->email == "")
                                     {
                                     foreach ($customer_list as $value)
                                     {
-                                    
+
                                     ?>
                                    <tr>
                                         <td><?=$value->customer_id?></td>
@@ -207,13 +207,13 @@ if($this->session->email == "")
                                         <td><?=$value->email?></td>
                                         <td><?=$value->password?></td>
                                         <td><?=$value->phone?></td>
-                                        <td><?php 
+                                        <td><?php
                                             if(($value->created_by) == 0)
-                                            { 
+                                            {
                                                 echo 'Website';
-                                            } 
+                                            }
                                             else
-                                            { 
+                                            {
                                                 echo  "Admin";
                                             }?>
                                         </td>
@@ -225,9 +225,9 @@ if($this->session->email == "")
                             </table>
                         </div>
                     </div>
-                 
 
-                 
+
+
                 </div>
                     <!-- Extra Modal Options -->
                 </div>
@@ -256,8 +256,8 @@ if($this->session->email == "")
 
         <!-- Page JS Code -->
         <script src="<?= base_url();?>assets/js/pages/base_tables_datatables.js"></script>
-        
-        
+
+
         <script src="<?= base_url();?>assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
         <script src="<?= base_url();?>assets/js/plugins/bootstrap-datetimepicker/moment.min.js"></script>
         <script src="<?= base_url();?>assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>

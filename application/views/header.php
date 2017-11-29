@@ -1,4 +1,7 @@
 <link href="<?=base_url();?>css/wow.css" rel="stylesheet">
+<link href="<?=base_url();?>css/font-awesome.min.css" rel="stylesheet">
+<link href="owl.carousel.css" rel="stylesheet">
+
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
 <div class="header">
 			<div class="header-top">
@@ -13,15 +16,7 @@
    			</div>--><div class="col-md-4">
                 <h3 class="white-text wow fadeInLeft animated" wow-data-delay=".4s">Kanumilli Infra Solutions Pvt.Ltd.</h3>
             </div>
-            <div class="search-box">
-					<div id="sb-search" class="sb-search wow zoomIn animated animated" data-wow-delay=".7s">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-							<input class="sb-search-submit" type="submit" value="">
-							<span class="sb-icon-search"> </span>
-						</form>
-					</div>
-				</div>
+            
                             <div class="top-right wow zoomIn animated animated" data-wow-delay=".7s" style="width: 350px;">
 				<?php /*?><ul>
                                      <?php
@@ -60,7 +55,7 @@
 			<div class="header-bottom">
 					<div class="container">
 <!--/.content-->
-<div class="content white">
+<div class="content white col-md-9">
 	<nav class="navbar navbar-default " role="navigation">
 	    <div class="navbar-header col-md-2 wow zoomIn animated animated" data-wow-delay=".7s">
 	        
@@ -121,14 +116,23 @@
 	</nav>
 	<!--/.navbar-->
 </div>
+
+					<div class="col-md-3 sb-search1 wow zoomIn animated animated" data-wow-delay=".7s">
+						<form>
+							
+                            <input type="text" class="sb-icon-search1" id="myInput"  placeholder="Search for Product.." title="Type in a name">
+						</form>
+					</div>
+
 			   
 			
 <!-- search-scripts -->
 					<script src="<?=base_url();?>js/classie.js"></script>
-					<script src="<?=base_url();?>js/uisearch.js"></script>
-						<script>
+					<?php /*?><script src="<?=base_url();?>js/uisearch.js"></script><?php */?>
+						<!--<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
-						</script>
+						</script>-->
+                       
 					<!-- //search-scripts -->
 					<div class="clearfix"></div>
 					</div>

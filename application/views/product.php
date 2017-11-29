@@ -203,7 +203,7 @@
 							   
 			 </div><?php */?>
 		
-		 <div class="col-md-12 col-sm-12 product-model-sec wow fadeInUp animated animated" data-wow-delay=".5s">
+		 <div class="col-md-12 col-sm-12 product-model-sec wow fadeInUp animated animated" data-wow-delay=".5s" id="list">
                      <?php
                      if(!empty($productlist))
                                     {
@@ -217,7 +217,10 @@
                                         ?>
                      <div class="more products col-md-3">
 					 <div class="product-grid" >
-						 <span> </span>				
+						<span class="onsale">
+													<span class="sale-bg"></span>
+													<span class="sale-text">Sale</span>
+												</span>			
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
                                                    <a href="<?=base_url();?>ProductDetail/<?=$post->id;?>">
                                                     <img class="img-responsive products-catlog"   src="<?=base_url();?>/upload/product/<?=$post->id;?>/<?=$post->product_image;?>" style="width: 100%;  cursor: pointer;"  alt=""></a>

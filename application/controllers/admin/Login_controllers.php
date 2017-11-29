@@ -6,20 +6,20 @@ class Login_controllers extends CI_Controller {
         public function __construct()
 	{
             parent::__construct();
-            
+
             $this->load->model('Login_Model','login_model');
             $this->load->helper(array('form', 'url'));
             $this->load->library('form_validation');
             $this->load->library('session');
             $this->load->database();
-            
+
 	}
-        
+
 	public function index()
 	{
                 $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
                 $this->form_validation->set_rules('password', 'Password', 'required');
-                
+
                 if ($this->form_validation->run() == FALSE)
                 {
                     $this->load->view('admin/login');
@@ -37,6 +37,7 @@ class Login_controllers extends CI_Controller {
                             $this->session->userid = $row->id;
                             $this->session->admin = $row->is_Admin;
                             $this->session->email =  $row->email;
+                            $this->session->name =  $row->firstname;
                             redirect('account/dashboard');
                         }
                     }
@@ -47,13 +48,13 @@ class Login_controllers extends CI_Controller {
                     }
                 }
        }
-     
+
        public function logout()
        {
-            $this->load->helper('url');  
+            $this->load->helper('url');
             $this->load->library('session');
             $this->session->sess_destroy();
             redirect('account/login');
        }
-      
+
 }
