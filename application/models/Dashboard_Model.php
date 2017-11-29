@@ -64,5 +64,11 @@ class Dashboard_Model extends CI_Model {
             $this->db->set('date',date("Y-m-d H:i:s"));
             $this->db->insert('tbl_contact');
         }
+        public function subscribe_email(){
+          $data=array('email'=>$this->input->post('email'));
+          $this->db->insert('ibl_subscribers',$data);
+          $response=$this->db->insert_id();
+          return $response;
+        }
 
 }

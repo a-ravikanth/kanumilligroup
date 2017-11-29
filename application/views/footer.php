@@ -23,7 +23,7 @@
 <div class="text_form">Sign Up for Our Newsletter</div>
 </div>
 <div class="col-md-6 col-sm-12 col-xs-12 wp-field">
-<div class="form-newletter"><input class="search_input" name="input" type="text" value="" placeholder="Enter your email"> <button class="subscribe" type="submit">Subscribe</button></div>
+<div class="form-newletter"><form id="sub_email"><input class="search_input error" id="user_email" name="user_email" type="email" value="" placeholder="Enter your email" required> <button class="subscribe" name="subscribe" type="button" id="subscribe">Subscribe</button></form></div>
 </div>
 </div>
 </div>
@@ -31,15 +31,15 @@
 <div class="footer-section">
 			<div class="container">
 				<div class="footer-grids text_footer">
-					
+
 					<div class="col-md-4 col-sm-6 col-xs-12">
 <h4 class="footer-static-title">CONTACT</h4>
 <hr>
-<div class="map_marker"> 
+<div class="map_marker">
  Plot No-C60,Film Nagar, Road No-1, Jubilee Hills, Hyderabad, Telangana-500033.</div>
 <div class="fax">
 Hotline: +91 9100725555</div>
-<div class="envelope"> 
+<div class="envelope">
  Email: info@kanumilligroup.com</div>
 <br> <span class="twitter"></span> <span class="facebook"></span></div>
 <div class="col-md-4 footer-grid">
@@ -50,7 +50,7 @@ Hotline: +91 9100725555</div>
 						<?php
                                                     foreach ($category_list as $categ)
                                                     {
-                                                    ?> 
+                                                    ?>
                                                            <li><a href="<?=base_url();?>category/<?=$categ->id?>" style="text-transform: capitalize;"><?=$categ->category_name?></a></li>
                                                     <?php }?>
 					</ul>
@@ -59,19 +59,19 @@ Hotline: +91 9100725555</div>
 					<h4 class="footer-static-title">Customer Services</h4>
                     <hr>
 					<ul>
-						
+
                                                 <li><a href="<?=base_url()?>term">Terms & Conditions</a></li>
                                                 <li><a href="<?=base_url()?>faqs">Faqs</a></li>
-                                                					 
-                                                <li><a href="<?=base_url()?>contact">Contact</a></li>						 
+
+                                                <li><a href="<?=base_url()?>contact">Contact</a></li>
 					</ul>
 					</div>
-					
-					
+
+
 				<div class="clearfix"></div>
 				</div>
 			</div>
-            
+
 		</div>
         <div class="footer-bottom">
   <div class="container">
@@ -80,18 +80,48 @@ Hotline: +91 9100725555</div>
         <small class="copyright">
     Copyright @ 2017 by <span> <a href="#"> Kanumilli Infra Solutions Pvt.Ltd.</a></span>  All Rights Reserved
 </small>      </div>
-      
+
     </div>
   </div>
 </div>
         <script src="<?=base_url();?>js/wow.min.js"></script>
     <script src="<?=base_url();?>js/wow.js"></script>
     <script src="<?=base_url();?>js/jquery.jscrollpane.min.js"></script>
-    
+
     <script>
     new WOW().init();
 </script>
 <script>
+$('#subscribe').on('click', function(e){
+        //e.preventDefault();
+        var email = $('#user_email').val();
+				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				//regex.test(email);
+        if (regex.test(email)) {
+					$.ajax({
+								 url: "<?php echo base_url();?>/dashboard/email_subscribe",
+								 type: "POST",
+								 data: {email:email},
+								 dataType: "json",
+								 success: function (response) {
+										if(response.status){
+											console.log(response.message);
+											$('#user_email').val('');
+										}else{
+											console.log(response.message);
+										}
+								 },
+								 error: function(jqXHR, textStatus, errorThrown) {
+										console.log(textStatus, errorThrown);
+								 }
+						 });
+            //this.submit();
+        }else{
+					$('#user_email').focus();
+					console.log('wrong email');
+					return false;
+				}
+    });
 /*function looseCharacterMatch(a, b) {
   a = a.split("");
   b = b.substring(0,a.length);

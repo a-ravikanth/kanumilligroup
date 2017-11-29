@@ -70,5 +70,16 @@ class Dashboard extends CI_Controller {
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
             $this->load->view('faqs',$data);
         }
+        public function email_subscribe()
+  {
+            $res = $this->Dashboard_Model->subscribe_email();
+            if($res){
+              $result = ['status'=>true, 'message'=>'Thanks for Subscribe'];
+              echo json_encode($result);
+            }else{
+              $result = ['status'=>false, 'message'=>'Email already exist or Something went wrong'];
+              echo json_encode($result);
+            }
+        }
 
 }
