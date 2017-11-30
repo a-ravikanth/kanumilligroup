@@ -16,7 +16,7 @@
    			</div>--><div class="col-md-4">
                 <h3 class="white-text wow fadeInLeft animated" wow-data-delay=".4s">Kanumilli Infra Solutions Pvt.Ltd.</h3>
             </div>
-            
+
                             <div class="top-right wow zoomIn animated animated" data-wow-delay=".7s" style="width: 350px;">
 				<?php /*?><ul>
                                      <?php
@@ -41,10 +41,10 @@
                                                             {
                                                                 echo "0";
                                                             }
-                                                    ?>   
-                                                    
-							</a>	
-							
+                                                    ?>
+
+							</a>
+
 							<div class="clearfix"> </div>
 						</div></li>
 				</ul><?php */?>
@@ -58,7 +58,7 @@
 <div class="content white col-md-9">
 	<nav class="navbar navbar-default " role="navigation">
 	    <div class="navbar-header col-md-2 wow zoomIn animated animated" data-wow-delay=".7s">
-	        
+
                 <h1 class="navbar-brand"><a  href="<?=base_url();?>"dashboard><img class="img-responsive logo" src="<?=base_url();?>img/kanumilli-logo2.png"/></a></h1>
 	    </div>
 	    <!--/.navbar-header-->
@@ -80,32 +80,32 @@
 		            <ul class="dropdown-menu multi-column columns-3">
                     <div class="col-md-8 col-sm-8">
 			            <div class="row">
-                                           <?php 
+                                           <?php
                                                 foreach ($subcate as $sub){
                                                     if($category->id==$sub->parent_category_id)
                                                     {
                                                 ?>
-                                                
+
 				            <div class="col-sm-4 npd">
 					            <ul class="multi-column-dropdown">
                                                         <li><a style="text-transform: capitalize;" class="list1" href="<?php echo base_url()?>ProductList/<?php echo $category->id.'/'.$sub->subcat_id;?>"><?= $sub->subcategory_name;?></a></li>
 					            </ul>
 				            </div>
-                          
+
                                <?php } }?>
-                               
+
                                  </div>
                                   </div>
                             <div class="col-sm-4 menu-grids">
-											
+
 												<div class="new-add img-responsive">
-													
-												</div>	
-											
+
+												</div>
+
 										</div>
-                            
-                                             
-				   
+
+
+
 		            </ul>
 		        </li>
                         <?php }?>
@@ -118,21 +118,22 @@
 </div>
 
 					<div class="col-md-3 sb-search1 wow zoomIn animated animated" data-wow-delay=".7s">
-						<form>
-							
-                            <input type="text" class="sb-icon-search1" id="myInput"  placeholder="Search for Product.." title="Type in a name">
-						</form>
+
+						<form id="search" action="<?php echo base_url()?>search/result" method="post">
+          <input type="text" class="sb-icon-search1" id="myInput"  placeholder="Search for Product..." title="Type in a name">
+					<input type="hidden" name="product_id" id="product_id">
+				</form>
 					</div>
 
-			   
-			
+
+
 <!-- search-scripts -->
 					<script src="<?=base_url();?>js/classie.js"></script>
 					<?php /*?><script src="<?=base_url();?>js/uisearch.js"></script><?php */?>
 						<!--<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
 						</script>-->
-                       
+
 					<!-- //search-scripts -->
 					<div class="clearfix"></div>
 					</div>

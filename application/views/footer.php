@@ -154,3 +154,19 @@ $("#myInput").on("keyup", function () {
   });
 });*/
 </script>
+<link rel="stylesheet" href="<?php echo base_url()?>css/jquery-ui.css">
+<script src="<?php echo base_url()?>js/jquery-ui.js"></script>
+<script>
+$(function(){
+$("#myInput").autocomplete({
+	source: "<?php echo base_url();?>search/get_products", // path to the get_birds method
+	minLength: 2,
+	select: function(event, ui) {
+        if(ui.item){
+            $('#product_id').val(ui.item.value);
+        }
+        $('#search').submit();
+    }
+});
+});
+  </script>

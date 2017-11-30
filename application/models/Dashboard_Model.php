@@ -70,5 +70,18 @@ class Dashboard_Model extends CI_Model {
           $response=$this->db->insert_id();
           return $response;
         }
+        function get_search_products($q){
+          $this->db->select('*');
+          $this->db->like('product_name', $q);
+          $query = $this->db->get('tbl_products');
+          if($query->num_rows() > 0){
+            foreach ($query->result_array() as $row){
+              $new_row['label']=htmlentities(stripslashes($row['product_name']));
+              $new_row['value']=htmlentities(stripslashes($row['id']));
+              $row_set[] = $new_row; //build an array
+            }
+            echo json_encode($row_set); //format the array into json data
+          }
+        }
 
 }
