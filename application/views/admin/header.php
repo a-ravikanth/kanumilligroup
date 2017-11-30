@@ -182,6 +182,22 @@
                     <li>
                         <div class="btn-group">
                             <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
+                              Subscribers
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a tabindex="-1" href="<?= base_url();?>account/subscribe">
+                                        Subscribers List
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav-header pull-left">
+                    <li>
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
                              Admin Register
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">

@@ -137,6 +137,9 @@ $route['account/size-delete/(:num)'] = 'admin/size/deleteSize/$1';
 /*---------------------Enquiry-----------------------------------*/
 $route['account/enquiry'] = 'admin/enquiry';
 $route['account/enquiry-delete/(:num)'] = 'admin/enquiry/deleteEnquiry/$1';
+/*---------------------Subscribe-----------------------------------*/
+$route['account/subscribe'] = 'admin/subscribe';
+$route['account/subscribe-delete/(:num)'] = 'admin/subscribe/deleteSubscriber/$1';
 
 
 $route['default_controller'] = 'dashboard';
