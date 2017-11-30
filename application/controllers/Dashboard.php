@@ -48,7 +48,7 @@ class Dashboard extends CI_Controller {
 
         public function product_detail($product)
 	{
-            $data['products'] = $this->dashboard_model->get_all();
+            $data['products'] = $this->Dashboard_Model->get_all();
             $data['products_detail'] = $this->dashboard_model->products_detail($product);
             $this->load->view('product_detail',$data);
         }
@@ -80,6 +80,12 @@ class Dashboard extends CI_Controller {
               $result = ['status'=>false, 'message'=>'Email already exist or Something went wrong'];
               echo json_encode($result);
             }
+        }
+
+        public function getcatimage()
+        {
+          $res = $this->Dashboard_Model->getcatimagebycatid();
+          echo $res;
         }
 
 }

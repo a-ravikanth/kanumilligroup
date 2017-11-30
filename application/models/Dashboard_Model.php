@@ -84,4 +84,15 @@ class Dashboard_Model extends CI_Model {
           }
         }
 
+        public function getcatimagebycatid()
+        {
+          $this->db->select('image');
+          $this->db->from('tbl_subcategory');
+          $this->db->where('subcat_id', $this->input->post('subcatid'));
+          $this->db->where('parent_category_id', $this->input->post('catid'));
+          $this->db->limit(1);
+          $query = $this->db->get();
+          return $query->row('image');
+        }
+
 }

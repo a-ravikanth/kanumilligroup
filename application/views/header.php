@@ -88,7 +88,7 @@
 
 				            <div class="col-sm-4 npd">
 					            <ul class="multi-column-dropdown">
-                                                        <li><a style="text-transform: capitalize;" class="list1" href="<?php echo base_url()?>ProductList/<?php echo $category->id.'/'.$sub->subcat_id;?>"><?= $sub->subcategory_name;?></a></li>
+                                                        <li><a id="<?php echo $category->id.'_'.$sub->subcat_id?>" style="text-transform: capitalize;" class="list1 catimg" href="<?php echo base_url()?>ProductList/<?php echo $category->id.'/'.$sub->subcat_id;?>"><?= $sub->subcategory_name;?></a></li>
 					            </ul>
 				            </div>
 
@@ -98,8 +98,8 @@
                                   </div>
                             <div class="col-sm-4 menu-grids">
 
-												<div class="new-add img-responsive">
-
+												<div class="cat-img-responsive">
+													<img class="img-responsive" id="catimgs" src="img/home-header.jpg" />
 												</div>
 
 										</div>

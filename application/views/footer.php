@@ -168,5 +168,20 @@ $("#myInput").autocomplete({
         $('#search').submit();
     }
 });
+//mouse over get category image on menu
+$(".catimg").mouseover(function(){
+    var cat_subcat = this.id;
+		var catarray = cat_subcat.split('_');
+		$.ajax({
+					 url: "<?php echo base_url();?>/dashboard/getcatimage",
+					 type: "POST",
+					 data: {catid:catarray[0],subcatid:catarray[1]},
+					 success: function (response) {
+							//alert('upload/subcategory/'+catarray[1]+'/'+response);
+							$('.cat-img-responsive img').prop('src', 'upload/subcategory/'+catarray[1]+'/'+response);
+					 }
+			 });
 });
+});
+
   </script>
