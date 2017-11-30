@@ -85,7 +85,7 @@ color:red;
 
 							<ul class="slider">
 								<li data-thumb="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>">
-                                 <div > <img class="img-responsive big-image" src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" > </div>
+                                 <div > <img class="img-responsive big-image" src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" data-imagezoom="true" > </div>
 								</li>
 
 							</ul>
