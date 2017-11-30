@@ -66,7 +66,7 @@ class Dashboard_Model extends CI_Model {
         }
         public function subscribe_email(){
           $data=array('email'=>$this->input->post('email'));
-          $this->db->insert('ibl_subscribers',$data);
+          $this->db->insert('tbl_subscribers',$data);
           $response=$this->db->insert_id();
           return $response;
         }

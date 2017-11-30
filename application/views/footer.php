@@ -111,19 +111,23 @@ $('#subscribe').on('click', function(e){
 								 dataType: "json",
 								 success: function (response) {
 										if(response.status){
+											$('#sub_error').html(response.message);
 											console.log(response.message);
 											$('#user_email').val('');
 										}else{
+											$('#sub_error').html(response.message);
 											console.log(response.message);
 										}
 								 },
 								 error: function(jqXHR, textStatus, errorThrown) {
+									 $('#sub_error').html();
 										console.log(textStatus, errorThrown);
 								 }
 						 });
             //this.submit();
         }else{
 					$('#user_email').focus();
+					$('#sub_error').html('please enter valid email');
 					console.log('wrong email');
 					return false;
 				}

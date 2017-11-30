@@ -8,18 +8,18 @@
         <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
         <link rel="shortcut icon" href="assets/img/favicons/favicon.png">
-        
+
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/plugins/slick/slick.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/plugins/slick/slick-theme.min.css">
-        
+
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
         <link rel="stylesheet" id="css-main" href="<?php echo base_url(); ?>assets/css/oneui.css">
 
     </head>
     <body>
             <div id="page-container" class="side-scroll header-navbar-fixed">
-         
-       
+
+
        <?php      require_once(APPPATH.'views/admin/header.php'); ?>
             <!-- Main Container -->
             <main id="main-container">
@@ -63,7 +63,7 @@
                                                     <div style="margin-top: 0px; color: red;"><?= form_error('sub_category_name'); ?></div>
                                             </div>
                                         </div>
-                                          
+
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Product Image<span class="text-danger">*</span></label>
                                             <div class="col-md-7">
@@ -73,27 +73,27 @@
                                                 <input type="hidden"  value="<?= $post->subcat_id;?>" name="insertid">
                                             </div>
                                         </div>
-                                        
+
                                        <div class="form-group">
                                             <div class="col-md-8 col-md-offset-2">
                                                 <button class="btn btn-sm btn-primary" name="submit" type="submit"><i class="fa fa-check"></i> Edit Sub-Category Submit</button>
                                             </div>
                                         </div>
                                     </form>
-                                    <? }?>
+                                  <?php }?>
                                 </div>
                             </div>
                             <!-- END Main Dashboard Chart -->
                         </div>
-                     
+
                     </div>
-                  
+
                 </div>
                 <!-- END Page Content -->
             </main>
         <?php      require_once(APPPATH.'views/admin/footer.php'); ?>
         </div>
-    
+
         <script src="<?php echo base_url(); ?>assets/js/core/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/core/bootstrap.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/core/jquery.slimscroll.min.js"></script>
@@ -103,13 +103,13 @@
         <script src="<?php echo base_url(); ?>assets/js/core/jquery.placeholder.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/core/js.cookie.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/app.js"></script>
-        
+
     </body>
 </html>
 <script>
-    
+
 $('document').ready(function()
-{ 
+{
 	function readURL(input) {
 		if (input.files && input.files[0]) {
                     var reader = new FileReader();
@@ -123,6 +123,6 @@ $('document').ready(function()
 		$("#uploadFile").change(function(){
 			readURL(this);
 		});
-	
+
 });
 </script>
