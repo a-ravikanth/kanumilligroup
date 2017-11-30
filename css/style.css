@@ -218,7 +218,22 @@ h1.navbar-brand a {
 		color: #262626;
 		background-color: #f5f5f5;
 	}
-	
+	@media (min-width: 481px) {
+	.form-newletter .subscribe {
+    position: absolute;
+    top: -16px;
+    right: 0;
+    padding: 6.5px 45px;
+    line-height: 36px;
+    background: #fdd01b;
+    text-transform: uppercase;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+}
 	@media (max-width: 767px) {
 .white-text {
     color: #fff;
@@ -413,6 +428,7 @@ span.glyphicon.glyphicon-eye-open {
 }
 .gallery-grid {
   position: relative;
+  margin-bottom:15px;
  
 }
 .gallery-info {
@@ -1479,8 +1495,7 @@ width:30%;
 .product-grid {
 	background: #fbfbfb;
 	border: 1px solid #ddd;
-	/*margin: 10px 3% 4% 0;*/
-	float: left;	
+	/*margin: 10px 3% 4% 0;*/	
 	position: relative;
 	height: 300px;
 	padding: 0.5em 0.5em;
@@ -2477,6 +2492,20 @@ a.button {
 .subscribe {
     margin-top: 1em;
 }
+.form-newletter .subscribe {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    padding: 6.5px 16px;
+    line-height: 36px;
+    background: #fdd01b;
+    text-transform: uppercase;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
 .subscribe1 {
     width: 100%;
 }
@@ -2494,9 +2523,7 @@ a.button {
 .footer-section {
     padding: 2em 0;
 }
-.product-grid {
-    width: 46%;
-}
+
 .product-model {
     padding: 2em 0;
 }
@@ -2757,7 +2784,7 @@ a.button {
         min-height: 20px;
         padding: 19px;
         margin-bottom: 20px;
-        background-color: #f5f5f5;
+       
         border: 1px solid #e3e3e3;
         border-radius: 4px;
         -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
@@ -3553,6 +3580,7 @@ font-size:0.9em;
 }
 .more.products {
     margin-bottom: 1em;
+	float: left;
 }
 .galy-info {
     height: 60px;
@@ -3590,6 +3618,7 @@ opacity: 1;}
 	}
 	.product-catlog{
 	width:100%;
+	height:180px;
 	}
 	.blue-text a {
     color: #0D4B8e !important;
@@ -3621,7 +3650,7 @@ padding-right:0px !important;}
 }
 .text_form {
     text-transform: uppercase;
-    line-height: 100px;
+    margin-top: 35px;
     font-size: 24px;
     font-weight: 600;
     color: #fff;
@@ -3630,22 +3659,9 @@ padding-right:0px !important;}
 .form-newletter {
     position: relative;
 }
-.form-newletter .subscribe {
-    position: absolute;
-    top: -16px;
-    right: 0;
-    padding: 6.5px 45px;
-    line-height: 36px;
-    background: #fdd01b;
-    text-transform: uppercase;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-}
+
 .form-newletter .search_input {
-    line-height: 100px;
+    vertical-align: middle;
     width: 100%;
     height: 50px !important;
     margin: 25px 0;
@@ -3756,6 +3772,8 @@ map_marker {
     font-size: 13px;
     font-weight: 600;
     transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
     position: absolute;
     right: -26px;
     top: -22px;
@@ -3786,6 +3804,7 @@ link.link--kumya {
   border: 1px solid #e5e5e5;
   margin-bottom: 12px;
   border-radius:4px;
+  float: left;
 	
 }
 .sb-search1 {
@@ -3811,7 +3830,7 @@ link.link--kumya {
 	float: left;
 	overflow: hidden;
 	margin: 10px 1%;
-	width: 48%;
+	width: 98%;
 	height: auto;
 	background: #000;
 	text-align: center;
@@ -3821,7 +3840,6 @@ link.link--kumya {
 .grid figure img {
 	position: relative;
 	display: block;
-	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
 }
@@ -3907,7 +3925,7 @@ figure.effect-apollo p {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	margin: 3em;
+	margin: 1em 3em;
 	padding: 0 1em;
 	max-width: 150px;
 	border-right: 4px solid #fff;
@@ -3938,3 +3956,5 @@ figure.effect-apollo:hover p {
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
+.products-catlog{
+height:180px;}

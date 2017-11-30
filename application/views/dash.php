@@ -23,7 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="<?=base_url();?>js/simpleCart.min.js"> </script>
 	<!-- cart -->
         <style>
-          
+
   .data_values.active
     {
         border: 2px solid #ff5f00;
@@ -62,11 +62,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          <!-- <span class="glyphicon glyphicon-glass"></span>-->
         </h3>
         <h3>
-         
+
         </h3>
         </div>
         <img src="<?=base_url();?>img/slider/ab1.jpg" class="img-responsive" alt="" style="width:100%;">
-        
+
       </div>
 
       <div class="item">
@@ -75,19 +75,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          <!-- <span class="glyphicon glyphicon-glass"></span>-->
         </h3>
         <h3>
-         
+
         </h3>
         </div>
         <img src="<?=base_url();?>img/slider/banner4.jpg" class="img-responsive" alt="" style="width:100%;">
       </div>
-    
+
       <div class="item">
       <div class="carousel-caption wow fadeInLeft animated animated" data-wow-delay=".5s">
         <h3 class="icon-container">
      <!--     <span class="glyphicon glyphicon-glass"></span>-->
         </h3>
         <h3>
-          
+
         </h3>
         </div>
         <img src="<?=base_url();?>img/slider/banner2.jpg" class="img-responsive" alt="" style="width:100%;">
@@ -98,7 +98,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <!--    <span class="glyphicon glyphicon-glass"></span>-->
         </h3>
         <h3>
-       
+
         </h3>
         </div>
         <img src="<?=base_url();?>img/slider/banner1.jpg" class="img-responsive" alt="" style="width:100%;">
@@ -127,7 +127,7 @@ develop innovative accessories for all applications to promote efficient working
 labour. Bosch has also registered several hundred patents with its innovative applications and
 has transformed the accessories sector with its brilliance. Experience the best. Always.</p>
 						<div class="wow fadeInLeft animated animated shop-button" data-wow-delay=".5s">
-                        
+
                         </div>
 					</div>
 				<div class="col-md-6 banner-grid1  wow zoomIn animated animated" data-wow-delay=".5s">
@@ -143,30 +143,34 @@ has transformed the accessories sector with its brilliance. Experience the best.
 	<div class="container">
 		<div class="row">
         <div class="grid">
-					<figure class="effect-apollo col-md-6 col-sm-6 col-xs-12 banner-effect-text banner-big-left">
+           <div class=" col-md-6 col-sm-6 col-xs-12">
+					<figure class="effect-apollo  banner-effect-text banner-big-left">
 						<img class="img-responsive" src="<?=base_url();?>images/home-banner1.jpg" alt="">
 						<figcaption>
 							<h2>Bosch Tools</h2>
 							<p> Accessories guarantee your success</p>
 							<a href="#">View more</a>
-						</figcaption>			
+						</figcaption>
 					</figure>
+        </div>
+         <div class=" col-md-6 col-sm-6 col-xs-12">
 					<figure class="effect-apollo col-md-6 col-sm-6 col-xs-12 banner-effect-text">
 						<img class="img-responsive" src="<?=base_url();?>images/home-banner2.jpg" alt="">
 						<figcaption>
 							<h2>Bosch Tools</h2>
 							<p> Accessories guarantee your success</p>
 							<a href="#">View more</a>
-						</figcaption>			
+						</figcaption>
 					</figure>
+        </div>
 				</div>
-        
-        
+
+
         </div>	</div>
         </div>
 		<?php /*?><div class="banner-bottom">
 		<div class="gallery-cursual">
-	
+
 		<div id="owl-demo" class="owl-carousel text-center">
                     <?php   foreach ($slider as $slide)
                     {?>
@@ -176,7 +180,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
                      <?php }
                     ?>
 		</div>
-		
+
 		</div>
 		</div><?php */?>
 		<div class="gallery">
@@ -189,17 +193,17 @@ has transformed the accessories sector with its brilliance. Experience the best.
               <li><a class="link link--kumya" href="#htab3" data-toggle="tab"><span data-letters="Power Tool Accessories" >Power Tool Accessories</span></a></li>
               <!--<li><a class="link link--kumya" href="#htab4" data-toggle="tab"><span data-letters="kitchen">kitchen</span></a></li>
               <li><a class="link link--kumya" href="#htab5" data-toggle="tab"><span data-letters="personal care" >personal care</span></a></li>-->
-            
+
             </ul>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="htab1">
 			<div class="gallery-grids">
-                            <?php 
+                            <?php
                                 if(!empty($popular_product))
                                 {
                                     foreach ($popular_product as $popular)
-                                    { 
-                                        
+                                    {
+
                                         $id = $popular->id;
                                         $name = $popular->product_name;
                                         $description = $popular->product_description;
@@ -207,28 +211,28 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                         $image = $popular->product_image;
                                     ?>
 				<div class="col-md-3 col-xs-12 col-sm-6  gallery-grid">
-                
+
                 <div class="wow flipInY animated gallery-popular">
                 <span class="onsale">
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                
+
                                   <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="cursor: pointer;" alt=""/>  </a>
                                   <div class="galy-info">
 						<p><?=$popular->product_name;?></p>
 						<div class="galry">
-						
+
 					<div class="clearfix"></div>
 					</div>
 					</div>
 					<div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-					
+
                                             <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
-					
+
 					</div>
-                                  
-					
+
+
 				</div>
                 </div>
                              <?php }
@@ -242,13 +246,13 @@ has transformed the accessories sector with its brilliance. Experience the best.
             </div>
             <div role="tabpanel" class="tab-pane fade" id="htab2">
 			<div class="gallery-grids">
-            
-                            <?php 
+
+                            <?php
                                 if(!empty($popular_product_powertool))
                                 {
                                     foreach ($popular_product_powertool as $popular)
-                                    { 
-                                        
+                                    {
+
                                         $id = $popular->id;
                                         $name = $popular->product_name;
                                         $description = $popular->product_description;
@@ -256,7 +260,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                         $image = $popular->product_image;
                                     ?>
 				<div class="col-md-3 col-xs-12 col-sm-6  gallery-grid">
-                
+
                 <div class="wow flipInY animated gallery-popular">
                 <span class="onsale">
 													<span class="sale-bg"></span>
@@ -266,17 +270,17 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                     <div class="galy-info">
 						<p><?=$popular->product_name;?></p>
 						<div class="galry">
-						
+
 					<div class="clearfix"></div>
 					</div>
 					</div>
 					<div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-					
+
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
-					
+
 					</div>
-                                   
-					
+
+
 				</div>
                 </div>
                              <?php }
@@ -290,13 +294,13 @@ has transformed the accessories sector with its brilliance. Experience the best.
             </div>
             <div role="tabpanel" class="tab-pane fade" id="htab3">
 			<div class="gallery-grids">
-            
-                            <?php 
+
+                            <?php
                                 if(!empty($popular_product_accessories))
                                 {
                                     foreach ($popular_product_accessories as $popular)
-                                    { 
-                                        
+                                    {
+
                                         $id = $popular->id;
                                         $name = $popular->product_name;
                                         $description = $popular->product_description;
@@ -320,12 +324,12 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					</div>
 					</div>
 					<div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-				
+
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
-					
+
 					</div>
-                                 
-					
+
+
 				</div>
                 </div>
                              <?php }
@@ -339,12 +343,12 @@ has transformed the accessories sector with its brilliance. Experience the best.
             </div>
             <div role="tabpanel" class="tab-pane fade" id="htab4">
 			<div class="gallery-grids">
-                            <?php 
+                            <?php
                                 if(!empty($popular_product))
                                 {
                                     foreach ($popular_product as $popular)
-                                    { 
-                                        
+                                    {
+
                                         $id = $popular->id;
                                         $name = $popular->product_name;
                                         $description = $popular->product_description;
@@ -353,10 +357,10 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                     ?>
 				<div class="col-md-3 col-xs-12 col-sm-6  gallery-grid">
                  <div class="wow flipInY animated gallery-popular">
-               
+
                                     <a><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>   </a>
-					
-                                 
+
+
 					<div class="galy-info">
 						<p><?=$popular->product_name;?></p>
 						<div class="galry">
@@ -367,9 +371,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					</div>
 					</div>
                     <div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-					
+
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
-					
+
 					</div>
 				</div>
                 </div>
@@ -384,12 +388,12 @@ has transformed the accessories sector with its brilliance. Experience the best.
             </div>
             <div role="tabpanel" class="tab-pane fade" id="htab5">
 			<div class="gallery-grids">
-                            <?php 
+                            <?php
                                 if(!empty($popular_product))
                                 {
                                     foreach ($popular_product as $popular)
-                                    { 
-                                        
+                                    {
+
                                         $id = $popular->id;
                                         $name = $popular->product_name;
                                         $description = $popular->product_description;
@@ -398,10 +402,10 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                     ?>
 				<div class="col-md-3 col-xs12 col-sm-6  gallery-grid">
                 <div class="wow flipInY animated gallery-popular">
-                
+
                                     <a><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="width: 100%; cursor: pointer;" alt=""/> </a>
-					
-                                   
+
+
 					<div class="galy-info">
 						<p><?=$popular->product_name;?></p>
 						<div class="galry">
@@ -412,9 +416,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					</div>
 					</div>
                     <div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-					
+
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
-					
+
 					</div>
 				</div>
                 </div>
@@ -430,17 +434,17 @@ has transformed the accessories sector with its brilliance. Experience the best.
             </div>
 		</div>
 		</div>
-                        
-                        
+
+
             <div class="gallery">
                 <div class="container">
 			<h3>Latest Products</h3>
 			<div class="gallery-grids">
-                              <?php 
+                              <?php
                                     if(!empty($latest_product))
                                     {
                                     foreach ($latest_product as $latest)
-                                    { 
+                                    {
                                                                 $id = $latest->id;
                                                                 $name = $latest->product_name;
                                                                 $description = $latest->product_description;
@@ -448,15 +452,15 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                                                 $image = $latest->product_image;
                                     ?>
 				<div class="col-md-3 col-xs-12 col-sm-6 gallery-grid ">
-               
+
                 <div class="trend wow zoomIn animated animated" data-wow-delay=".5s">
                  <span class="onsale">
 													<span class="sale-bg"></span>
 													<span class="sale-text">New</span>
 												</span>
-                
+
                                    <p><a href="<?=base_url();?>ProductDetail/<?=$latest->id;?>"><img class="quicklook product-catlog" id="<?=$latest->id;?>" src="<?=base_url();?>/upload/product/<?=$latest->id;?>/<?=$latest->product_image;?>" style= "width: 100%; cursor: pointer;" alt=""/>
-					
+
                                     </a>
 					<div class="galy-info">
 						<p><?=$latest->product_name;?></p>
@@ -468,9 +472,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					</div>
 					</div>
                     <div class="quicklook" id="<?=$latest->id;?>" style="cursor: pointer;">
-					
+
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$latest->id;?>"> More Details </a></p>
-					
+
 					</div>
 				</div>
                 </div>
@@ -484,18 +488,18 @@ has transformed the accessories sector with its brilliance. Experience the best.
 			</div>
 		</div>
 		</div>
-                    
-                        
+
+
             <div class="gallery">
                 <div class="container">
 			<h3>Feature Products</h3>
 			<div class="gallery-grids">
-            
-                                <?php 
+
+                                <?php
                                  if(!empty($feature_product))
                                     {
                                     foreach ($feature_product as $feature)
-                                    { 
+                                    {
                                             $id = $feature->id;
                                             $name = $feature->product_name;
                                             $description = $feature->product_description;
@@ -503,15 +507,15 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                             $image = $feature->product_image;
                                         ?>
 				<div class="col-md-3 col-xs-12 col-sm-6 gallery-grid ">
-                
+
                 <div class="trend wow zoomIn animated animated" data-wow-delay=".5s">
                 <span class="onsale">
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                
+
                                     <a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"><img class="quicklook product-catlog" id="<?=$feature->id;?>" src="<?=base_url();?>/upload/product/<?=$feature->id;?>/<?=$feature->product_image;?>" style="width: 100%; cursor: pointer;" alt=""/>
-					
+
                                     </a>
 					<div class="galy-info">
 						<p><?=$feature->product_name;?></p>
@@ -523,9 +527,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					</div>
 					</div>
                     <div class="quicklook" id="<?=$feature->id;?>" style="cursor: pointer;">
-					
+
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"> More Details </a></p>
-					
+
 					</div>
 				</div>
                 </div>
@@ -539,14 +543,14 @@ has transformed the accessories sector with its brilliance. Experience the best.
 			</div>
 		</div>
 		</div>
-                        
-	
-                       
+
+
+
 	<!--footer-->
 		<?php require_once 'footer.php';?>
 	<!--footer-->
 	<script src="<?=base_url();?>js/owl.carousel.js"></script>
-    
+
         <script>
                 $(document).ready(function() {
                         $("#owl-demo").owlCarousel({
@@ -556,30 +560,30 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                 pagination : false,
                         });
                 });
-        </script>	
+        </script>
 </body>
 </html>
 
 <script type="text/javascript">
             	$(document).ready(function() {
-                    
-                                 $("#header-modal").delegate("#addcartform","submit",function(e){       
+
+                                 $("#header-modal").delegate("#addcartform","submit",function(e){
 		var color = document.forms["productformcart"]["color"].value;
 		if (color == null || color == "") {
 			alert("Color must be Selected. Click for select.");
 			return false;
 		}
-		
+
 		var size = document.forms["productformcart"]["size"].value;
 		if (size == null || size == "") {
 			alert("Size must be Selected. Click for select.");
 			return false;
 		}
             });
-                    
-                     
-                         
-                   
+
+
+
+
                      $("#header-modal").delegate(".data_values","click",function(e){
                         var id = $(this).attr('id');
                         $('.data_values').removeClass('active');
@@ -593,30 +597,29 @@ has transformed the accessories sector with its brilliance. Experience the best.
                         $("#sizeProduct").val(id.slice(4));
                     });
 
-            
+
         });
 	</script>
     <script>
 	$('.nav-tabs-dropdown').each(function(i, elm) {
-    
+
     $(elm).text($(elm).next('ul').find('li.active a').text());
-    
+
 });
-  
+
 $('.nav-tabs-dropdown').on('click', function(e) {
 
     e.preventDefault();
-    
+
     $(e.target).toggleClass('open').next('ul').slideToggle();
-    
+
 });
 
 $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
 
     e.preventDefault();
-    
+
     $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
-      
+
 });
 	</script>
-    

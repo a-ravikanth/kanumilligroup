@@ -23,7 +23,13 @@
 <div class="text_form">Sign Up for Our Newsletter</div>
 </div>
 <div class="col-md-6 col-sm-12 col-xs-12 wp-field">
-<div class="form-newletter"><form id="sub_email"><input class="search_input error" id="user_email" name="user_email" type="email" value="" placeholder="Enter your email" required> <button class="subscribe" name="subscribe" type="button" id="subscribe">Subscribe</button></form></div>
+<div class="form-newletter"><form id="sub_email">
+	<input class="search_input error" id="user_email" name="user_email" type="email" value="" placeholder="Enter your email" required>
+	<button class="subscribe" name="subscribe" type="button" id="subscribe">Subscribe</button>
+	<div id="sub_error">
+	</div>
+</form>
+</div>
 </div>
 </div>
 </div>
