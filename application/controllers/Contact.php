@@ -13,12 +13,12 @@ class Contact extends CI_Controller {
             $this->load->model('Product_Model',"product_model");
             $this->load->model('Wishlist_Model',"Wishlist_Model");
             $this->load->library('cart');
-            $this->load->helper('url');  
-            $this->load->helper('form');  
+            $this->load->helper('url');
+            $this->load->helper('form');
             $this->load->library('session');
             $this->load->database();
             $this->load->library('encrypt');
-            
+
         }
 
 
@@ -40,6 +40,48 @@ class Contact extends CI_Controller {
                 $this->load->view('contact',$data);
             }
         }
-       
-       
+
+        public function sendemail()
+        {
+          $config = Array(
+            'protocol' => 'sendmail',
+            'smtp_host' => 'mail.ingresos.in',
+            'smtp_port' => 25,
+            'smtp_user' => 'ravikanth@ingresos.in',
+            'smtp_pass' => 'ravikanth@123',
+            'smtp_timeout' => '4',
+            'mailtype'  => 'html',
+            'charset'   => 'iso-8859-1'
+          );
+          $name = $this->input->post('name');
+          $userEmail = $this->input->post('email');
+          $subject = $this->input->post('subject');
+          $this->load->library('email', $config);
+          $this->email->set_newline("\r\n");
+          $this->email->from($userEmail, $name);
+          $data = array(
+          'userName'=> $name,
+          'email'=> $userEmail,
+          'subject'=> $subject,
+          'message'=> $this->input->post('message')
+          );
+          $this->email->to($userEmail);  // replace it with receiver mail id
+          $this->email->subject($subject); // replace it with relevant subject
+          $body = $this->load->view('email_temp',$data,TRUE);
+          $this->email->message($body);
+          if ($this->email->send())
+          {
+              // mail sent
+              $this->session->set_flashdata('msg','Your mail has been sent successfully!');
+              redirect('contact');
+          }
+          else
+          {
+              //error
+              $this->session->set_flashdata('msg','There is error in sending mail! Please try again later');
+              redirect('contact');
+          }
+        }
+
+
 }

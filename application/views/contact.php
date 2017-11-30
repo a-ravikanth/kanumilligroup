@@ -53,14 +53,14 @@ $(window).load(function() {
   <!---->
 
 <div class="breadcrumbs">
-	
+
     <div class="container">
 	<ol class="breadcrumb breadcrumb1 setwow slideInLeft animated" data-wow-delay=".5s">
   <li class="breadcrumb-item"><a href="<?=base_url();?>dashboard">Home</a></li>
   <li class="breadcrumb-item active">Contact Us</li>
-</ol>	
+</ol>
 </div>
-	
+
     </div>
 <!-- contact -->
 <div class="contact">
@@ -70,16 +70,17 @@ $(window).load(function() {
 			<p class="text-center"></p>
 <div class="address"><!--address-->
 		<div class="container">
-        
+
 			<div class="address-row">
 				<div class="col-md-6 address-left wow fadeInLeft animated animated" data-wow-delay=".5s" >
 					<div class="address-grid">
+						<span style="color:#ffffff"><?php echo $this->session->flashdata('msg');?></span>
 						<h4 class="wow fadeIndown animated animated" data-wow-delay=".5s" >DROP US A LINE </h4>
-						<form>
-							<input class="wow fadeIndown animated animated" data-wow-delay=".6s" placeholder="Name" required="" style="visibility: visible; animation-delay: 0.6s;" type="text">
-							<input class="wow fadeIndown animated animated" data-wow-delay=".7s" placeholder="Email" required="" style="visibility: visible; animation-delay: 0.7s;" type="text">
-							<input class="wow fadeIndown animated animated" data-wow-delay=".8s" placeholder="Subject" required="" style="visibility: visible; animation-delay: 0.8s;" type="text">
-							<textarea class="wow fadeIndown animated animated" data-wow-delay=".8s" placeholder="Message" required="" style="visibility: visible; animation-delay: 0.8s;"></textarea>
+						<form name="contact" id="contact" method="post" action="<?php echo base_url();?>contact/sendemail">
+							<input name="name" class="wow fadeIndown animated animated" data-wow-delay=".6s" placeholder="Name" required="" style="visibility: visible; animation-delay: 0.6s;" type="text">
+							<input name="email" class="wow fadeIndown animated animated" data-wow-delay=".7s" placeholder="Email" required="" style="visibility: visible; animation-delay: 0.7s;" type="text">
+							<input name="subject" class="wow fadeIndown animated animated" data-wow-delay=".8s" placeholder="Subject" required="" style="visibility: visible; animation-delay: 0.8s;" type="text">
+							<textarea name="message" class="wow fadeIndown animated animated" data-wow-delay=".8s" placeholder="Message" required="" style="visibility: visible; animation-delay: 0.8s;"></textarea>
 							<input class="wow fadeIndown animated animated" data-wow-delay=".9s" value="SEND" style="visibility: visible; animation-delay: 0.9s;" type="submit">
 						</form>
 					</div>
@@ -100,12 +101,12 @@ $(window).load(function() {
 						<p><a href="prasad@kanumilligroup.com"> prasad@kanumilligroup.com</a></p>
 					</div>
 				</div>
-			</div>	
-		</div>	
+			</div>
+		</div>
 	</div>
 	<div class="container">
 		<div class="spec ">
-			
+
 				<div class="ser-t">
 					<b></b>
 					<span><i></i></span>
@@ -119,14 +120,14 @@ $(window).load(function() {
                                 <?=$this->session->flashdata('SUCCESSMSG')?>
                         </div>
                 <?php } ?>
-            
+
 		<div class=" contact-w3">
-        	
-			
+
+
 			<div class="col-md-12 contact-left">
-				
+
 			</div>
-			
+
 		<div class="clearfix"></div>
 	</div>
 	</div>
