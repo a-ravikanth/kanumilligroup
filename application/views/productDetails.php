@@ -85,7 +85,9 @@ color:red;
 
 							<ul class="slider">
 								<li data-thumb="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>">
-                                 <div > <img class="img-responsive big-image" src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" data-imagezoom="true" > </div>
+                                 <div > <img class="img-responsive big-image" src="<?=base_url();?>/upload/product/<?=$detail->id;?>/<?=$detail->product_image;?>" data-imagezoom="true" >
+                                 </div>
+
 								</li>
 
 							</ul>
@@ -129,6 +131,9 @@ color:red;
 
 							<div>
 
+                            <div class="col-md-6">
+
+
                                                             <form action="<?=base_url();?>cart/add" method="post" name="productform" onSubmit="return validateForm()">
 
 
@@ -142,28 +147,39 @@ color:red;
                                                                                 }
                                                                                 ?>
                                                                                  </a></h3>
-								<!--<p>Tag : <a href="#"> Lorem ipsum </a></p>-->
+
+                                                        <input min="1" type="hidden" id="quantity" name="qty" value="1" class="form-control input-small">
+                                                        <input type="hidden" name="color" id="productcolor" value="" />
+                                                        <input type="hidden" name="size" id="productsize" value="" />
 							</div>
                                                     <?php echo form_hidden('id', $id);
                                                     echo form_hidden('name', $name);
-
+													echo form_hidden('price', $price);
                                                     echo form_hidden('image', $image);
                                             ?>
-                                                    <button type="button" class="add-cart button button--moema button--border-thick button--size-s" data-toggle="modal" data-target="#myModal">Enquiry Form</button>
+                                           <button type="submit" class="add-cart item_add button button--moema button--border-thick button--size-s" name="action">ADD TO CART</button>
+                                              </form>
+
+                                              </div>
+
+                                         	<div class="col-md-6 mt-35">
+                                              <button type="button" class="add-cart button button--moema button--border-thick button--size-s" data-toggle="modal" data-target="#myModal">Enquiry Form</button>
+                                              </div>
 
                                                <?php
 //                                                echo form_close();
                                             ?>
-                                                                </form>
-
-
-
 
                                                                 <br>
 							</div>
 
-					</div>
+
+
+
                     </div>
+
+
+                             </div>
 
 					<div class="clearfix"> </div>
 				</div>
@@ -336,10 +352,10 @@ color:red;
 						<div class="more-product"><span> </span></div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
                                                     <img class=""   src="<?=base_url();?>/upload/product/<?=$value->id;?>/<?=$value->product_image;?>" style="width: 100%; height: 300px; cursor: pointer;"  alt="">
-                                                    <div class="b-wrapper quicklook" id="<?=$value->id;?>" style="cursor: pointer;">
-							<h4 class="b-animate b-from-left  b-delay03">
-							<button> Quick View </button>
-							</h4>
+                                                    <div class="b-wrapper quicklook" id="<?=$post->id;?>" style="cursor: pointer;">
+							<h3 class="">
+							<button>Add to Cart</button>
+							</h3>
 							</div>
 						</div>
 						<div class="product-info simpleCart_shelfItem">
@@ -421,23 +437,13 @@ color:red;
           </div>
           <div class="form-group col-md-12" >
         <label for="name" class="enquiry-label">Address</label><br>
-        <span class="col-md-6 npl">
-          <input type="text" name="eaddress1" value="" placeholder="Street Address Line 1 ">
-          </span>
-          <span class="col-md-6 npr">
-          <input type="text" name="eaddress2" value="" placeholder="Street Address Line 2 ">
-          </span>
+        <span class="addr">
+          <textarea  name="eaddress1" value="" placeholder=" "> </textarea>
+          </span>        
           </div>
-          <div class="form-group col-md-6">
-           <label for="name" class="enquiry-label">City</label><br>
-          <input type="text" name="ecity" value="">
-          </div>
-          <div class="form-group col-md-6">
-           <label for="name" class="enquiry-label">State</label><br>
-          <input type="text" name="estate" value="">
-
-          </div>
-          <div class="form-group col-md-2">
+          
+          
+        <div class="form-group col-md-3">
          <input class="btn btn-danger" type="Submit"  value="Submit">
          </div>
 
@@ -463,50 +469,43 @@ color:red;
 
 </body>
 </html>
-<script type="text/javascript">
+ <script type="text/javascript">
 
 		$(document).ready(function() {
 
-             $("#header-modal").delegate("#addcartform","submit",function(e){
-		var color = document.forms["productformcart"]["color"].value;
-		var size = document.forms["productformcart"]["size"].value;
-		if ((color == null || color == "") && (size == null || size == "")) {
-			document.getElementById("error").innerHTML ="Color and Size must be Selected. Click for select.";
-			return false;
-		}
-		if (color == null || color == "") {
-			document.getElementById("error").innerHTML ="Color must be Selected. Click for select.";
-			return false;
-		}
+           /* $("#header-modal").delegate("#addcartform","submit",function(e){
+                    var color = document.forms["productformcart"]["color"].value;
+                    if (color == null || color == "") {
+                            alert("Color must be Selected. Click for select.");
+                            return false;
+                    }
 
-
-		if (size == null || size == "") {
-		document.getElementById("error").innerHTML ="Size must be Selected. Click for select.";
-			return false;
-		}
-
-
+                    var size = document.forms["productformcart"]["size"].value;
+                    if (size == null || size == "") {
+                            alert("Size must be Selected. Click for select.");
+                            return false;
+                    }
             });
+                    */
 
 
 
-
-
-                     $("#header-modal").delegate(".data_values","click",function(e){
+                  /*   $("#header-modal").delegate(".data_values","click",function(e){
                         var id = $(this).attr('id');
-                        $('.data_values').removeClass('active');
-                        $("#"+id).addClass('active');
+                        $('.data_values').removeClass('active1');
+                        $("#"+id).addClass('active1');
                         $("#colorProduct").val(id.slice(1));
                     });
                      $("#header-modal").delegate(".data_values_size","click",function(e){
                         var id = $(this).attr('id');
-                        $('.data_values_size').removeClass('active');
-                        $("#"+id).addClass('active');
+                        $('.data_values_size').removeClass('active1');
+                        $("#"+id).addClass('active1');
                         $("#sizeProduct").val(id.slice(4));
-                    });
+                    });*/
+
+
                     $('.quicklook').click(function() {
                         var product_id = $(this).attr('id');
-
                         $.ajax({
                                 type: "POST",
                                 url: "<?=base_url();?>product/SingleProuctDetail",
@@ -517,12 +516,9 @@ color:red;
                                       $('#header-modal').modal('show');
                                 }
 
-                            });
-
-
+                        });
                 });
-
-		});
+        });
 	</script>
     <script type="text/javascript">
 	function validate_form() {
@@ -560,7 +556,7 @@ color:red;
 						url: "<?php echo base_url(); ?>" + "product/submitEqform",
 						async: false,
 						dataType: 'json',
-						data: {fname: enquiry.efname.value, lname:enquiry.elname.value, qty:enquiry.equantity.value, product:enquiry.productname.value,email:enquiry.eemail.value,phone:enquiry.ephone.value,add1:enquiry.eaddress1.value,add2:enquiry.eaddress2.value,city:enquiry.ecity.value,state:enquiry.estate.value },
+						data: {fname: enquiry.efname.value, lname:enquiry.elname.value, qty:enquiry.equantity.value, product:enquiry.productname.value,email:enquiry.eemail.value,phone:enquiry.ephone.value,add1:enquiry.eaddress1.value },
 						success: function(res) {
 						if (res)
 						{

@@ -123,47 +123,20 @@ class Product extends CI_Controller {
                                                     <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
 						</div>
 						<div class='modal-body modal-spa'>
-								<div class='col-md-5 span-2'>
+								<div class='col-md-6'>
 											<div class='item'>
-												<img height=350px  width=100%  src='".$base."upload/product/".$post->id."/".$post->product_image."'>
+												<img style='border: 1px solid #ddd;' height=180px  width=100%  src='".$base."upload/product/".$post->id."/".$post->product_image."'>
 											</div>
 								</div>
-								<div class='col-md-7 span-1'>
-								       <h3 style='text-transform: capitalize'>".$post->product_name."</h3>
-									<div class='price_single'>
-                                                                            <br>
-                                                                          <span class='reducedfrom '>Rs. ".$post->product_price."</span>
-                                                                              <br>
-                                                                              <br>
-                                                                              <h4>Color</h4>
-                                                                          <span class='reducedfrom '>";
-                foreach ($output['color_list'] as $color) {
-                    foreach ($colorencode as $encode) {
-                        if($color->id==$encode)
-                        {
-                            $detail.="<span class='data_values ' id="."c".$color->id." style=' height: 20px; width:20px; cursor: pointer;margin:8px; background-color:#".$color->colorcode.";'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>";
-                        }
-
-                    }
-                }
-                $detail.="<br><br><h4>Size</h4>";
-                foreach ($output['size_list'] as $size) {
-                    foreach ($sizeencode as $encode) {
-                        if($size->id==$encode)
-                        {
-                            $detail.="<span class='data_values_size ' id="."size".$size->id." style='margin:8px;cursor: pointer;' >".$size->size."</span>";
-                        }
-
-                    }
-                }
-
-                                                                     $detail.=  "</span>
-									<div class='clearfix'></div>
-									</div>
+								
+								       <h3 style='text-transform: capitalize;color: #0D4B8e;font-size: 18px;'>".$post->product_name."</h3>
+									
 									<br>
 
 									<div class='add-to'>
+									
 								                <form action='".$base."cart/add' method='post' name='productformcart' id='addcartform'>
+												<div class='col-md-6'>
                                                                                     <input type='hidden' name='color' id='colorProduct' value=''>
                                                                                     <input type='hidden' name='size' id='sizeProduct' value=''>
                                                                                     <input type='hidden' name='id'  value=".$post->id.">
@@ -171,10 +144,14 @@ class Product extends CI_Controller {
                                                                                     <input type='hidden' name='price' value=".$post->product_price.">
                                                                                     <input type='hidden' name='image' value=".$post->product_image.">
                                                                                     Qty<input min='1' type='number' id='quantity' name='qty' value='1' class='form-control input-small' style='width:60px;'>
-                                                                                    <a href='".$base."ProductDetail/".$post->id."' class='btn btn-danger my-cart-btn my-cart-btn1'>View Detail</a>
-                                                                                    <button type='submit'  class='add-cart item_add' name='action'>ADD TO CART</button>
+																					</div>
+																					<div class='col-md-12' style='text-align:center;'>
+                                                                                    <a href='".$base."ProductDetail/".$post->id."' class='btn btn-danger my-cart-btn my-cart-btn1' style='margin: 10px;'>View Detail</a>
+                                                                                    <button type='submit'  class=' btn btn-danger add-cart item_add' style='margin-right:20px;' name='action'>ADD TO CART</button>
+																					</div>
+																					
                                                                                 </form>
-										</div>
+										
 								</div>
 								<div class='clearfix'> </div>
 							</div>
@@ -214,10 +191,7 @@ class Product extends CI_Controller {
         'eq_qty'          => $this->input->post('qty'),
         'eq_email'        => $this->input->post('email'),
         'eq_phone'        => $this->input->post('phone'),
-        'eq_address1'     => $this->input->post('add1'),
-        'eq_address2'     => $this->input->post('add2'),
-        'eq_city'         => $this->input->post('city'),
-        'eq_state'        => $this->input->post('state')
+        'eq_address1'     => $this->input->post('add1')
       );
       $res = $this->product_model->productEnquiry($eqdata);
       if($res){

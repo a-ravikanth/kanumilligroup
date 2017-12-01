@@ -51,9 +51,7 @@
                                         <th>Customer Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
-                                        <th>Address1</th>
-                                        <th>City</th>
-                                        <th>State</th>
+                                        <th>Address</th>
                                         <th>Created Date</th>
                                         <th>Actions</th>
                                     </tr>
@@ -67,9 +65,7 @@
                                         <td><?= $post->eq_fname.' '.$post->eq_lname?></td>
                                         <td><?= $post->eq_email?></td>
                                         <td><?= $post->eq_phone?></td>
-                                        <td><?= $post->eq_address1.'<br>'.$post->eq_address2?></td>
-                                        <td><?= $post->eq_city?></td>
-                                        <td><?= $post->eq_state?></td>
+                                        <td><?= $post->eq_address1?></td>
                                         <td><?= $post->created_date?></td>
                                          <td>
                                             <!-- <a class="btn btn-default btn-rounded btn-condensed btn-sm" type="button" data-toggle="tooltip"  title="Edit" href="<?=site_url('account/size-color/'.$post->eq_id)?>"><i class="fa fa-pencil"></i></a> -->

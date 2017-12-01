@@ -154,7 +154,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					</figure>
         </div>
          <div class=" col-md-6 col-sm-6 col-xs-12">
-					<figure class="effect-apollo col-md-6 col-sm-6 col-xs-12 banner-effect-text">
+					<figure class="effect-apollo banner-effect-text">
 						<img class="img-responsive" src="<?=base_url();?>images/home-banner2.jpg" alt="">
 						<figcaption>
 							<h2>Bosch Tools</h2>
@@ -218,9 +218,14 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-text">Sale</span>
 												</span>
 
-                                  <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="cursor: pointer;" alt=""/>  </a>
+                                 <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="cursor: pointer;" alt=""/>
+                                  <div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
+					</div>
+					</div>
                                   <div class="galy-info">
-						<p><?=$popular->product_name;?></p>
+						 <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><p><?=$popular->product_name;?></p></a>
 						<div class="galry">
 
 					<div class="clearfix"></div>
@@ -266,9 +271,14 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                                    <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/> </a>
+                                    <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>
+                                    <div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
+					</div>
+					</div>
                                     <div class="galy-info">
-						<p><?=$popular->product_name;?></p>
+						<a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><p><?=$popular->product_name;?></p></a>
 						<div class="galry">
 
 					<div class="clearfix"></div>
@@ -313,9 +323,14 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                                   <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>   </a>
+                                  <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>
+                                   <div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
+					</div>
+					</div>
                                     <div class="galy-info">
-						<p><?=$popular->product_name;?></p>
+						 <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><p><?=$popular->product_name;?></p>  </a>
 						<div class="galry">
 						<?php /*?><div class="prices">
                                                     <h5  class="item_price" style="color: #000;font-size: 1em;font-weight: 600;">Rs. <?=$popular->product_price;?></h5>
@@ -459,11 +474,16 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-text">New</span>
 												</span>
 
-                                   <p><a href="<?=base_url();?>ProductDetail/<?=$latest->id;?>"><img class="quicklook product-catlog" id="<?=$latest->id;?>" src="<?=base_url();?>/upload/product/<?=$latest->id;?>/<?=$latest->product_image;?>" style= "width: 100%; cursor: pointer;" alt=""/>
+                                   <p><img class="quicklook product-catlog" id="<?=$latest->id;?>" src="<?=base_url();?>/upload/product/<?=$latest->id;?>/<?=$latest->product_image;?>" style= "width: 100%; cursor: pointer;" alt=""/>
 
-                                    </a>
+<div class="gallery-info quicklook" id="<?=$latest->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
+					</div>
+					</div>
+
 					<div class="galy-info">
-						<p><?=$latest->product_name;?></p>
+						<a href="<?=base_url();?>ProductDetail/<?=$latest->id;?>"><p><?=$latest->product_name;?></p>  </a>
 						<div class="galry">
 						<?php /*?><div class="prices">
 						<h5  class="item_price" style="color: #000;font-size: 1em;font-weight: 600;">Rs. <?=$latest->product_price;?></h5>
@@ -514,11 +534,16 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-text">Sale</span>
 												</span>
 
-                                    <a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"><img class="quicklook product-catlog" id="<?=$feature->id;?>" src="<?=base_url();?>/upload/product/<?=$feature->id;?>/<?=$feature->product_image;?>" style="width: 100%; cursor: pointer;" alt=""/>
+                                   <img class="quicklook product-catlog" id="<?=$feature->id;?>" src="<?=base_url();?>/upload/product/<?=$feature->id;?>/<?=$feature->product_image;?>" style="width: 100%; cursor: pointer;" alt=""/>
+                                    <div class="gallery-info quicklook" id="<?=$feature->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
+					</div>
+					</div>
 
-                                    </a>
+
 					<div class="galy-info">
-						<p><?=$feature->product_name;?></p>
+						 <a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"><p><?=$feature->product_name;?></p>  </a>
 						<div class="galry">
 						<?php /*?><div class="prices">
 						<h5 class="item_price" style="color: #000;font-size: 1em;font-weight: 600;">Rs. <?=$feature->product_price;?></h5>
@@ -544,7 +569,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
 		</div>
 		</div>
 
-
+  <div class="modal fade" id="header-modal" aria-hidden="true"></div>
 
 	<!--footer-->
 		<?php require_once 'footer.php';?>
@@ -564,40 +589,55 @@ has transformed the accessories sector with its brilliance. Experience the best.
 </body>
 </html>
 
-<script type="text/javascript">
-            	$(document).ready(function() {
+ <script type="text/javascript">
 
-                                 $("#header-modal").delegate("#addcartform","submit",function(e){
-		var color = document.forms["productformcart"]["color"].value;
-		if (color == null || color == "") {
-			alert("Color must be Selected. Click for select.");
-			return false;
-		}
+		$(document).ready(function() {
 
-		var size = document.forms["productformcart"]["size"].value;
-		if (size == null || size == "") {
-			alert("Size must be Selected. Click for select.");
-			return false;
-		}
+           /* $("#header-modal").delegate("#addcartform","submit",function(e){
+                    var color = document.forms["productformcart"]["color"].value;
+                    if (color == null || color == "") {
+                            alert("Color must be Selected. Click for select.");
+                            return false;
+                    }
+
+                    var size = document.forms["productformcart"]["size"].value;
+                    if (size == null || size == "") {
+                            alert("Size must be Selected. Click for select.");
+                            return false;
+                    }
             });
+                    */
 
 
 
-
-                     $("#header-modal").delegate(".data_values","click",function(e){
+                  /*   $("#header-modal").delegate(".data_values","click",function(e){
                         var id = $(this).attr('id');
-                        $('.data_values').removeClass('active');
-                        $("#"+id).addClass('active');
+                        $('.data_values').removeClass('active1');
+                        $("#"+id).addClass('active1');
                         $("#colorProduct").val(id.slice(1));
                     });
                      $("#header-modal").delegate(".data_values_size","click",function(e){
                         var id = $(this).attr('id');
-                        $('.data_values_size').removeClass('active');
-                        $("#"+id).addClass('active');
+                        $('.data_values_size').removeClass('active1');
+                        $("#"+id).addClass('active1');
                         $("#sizeProduct").val(id.slice(4));
-                    });
+                    });*/
 
 
+                    $('.quicklook').click(function() {
+                        var product_id = $(this).attr('id');
+                        $.ajax({
+                                type: "POST",
+                                url: "<?=base_url();?>product/SingleProuctDetail",
+                                data: {product_id: product_id},
+                                dataType: "json",
+                                success: function(data) {
+                                     $("#header-modal").html(data.success);
+                                      $('#header-modal').modal('show');
+                                }
+
+                        });
+                });
         });
 	</script>
     <script>

@@ -40,9 +40,10 @@ $(window).load(function() {
 			<!--header-->
 <!-- checkout -->
 <div class="content">
-<div class="cart-items">
+
 
 	<div class="container">
+    <div class="cart-items col-md-6 npl">
             <?php if($this->session->flashdata('SUCCESSMSG')) { ?>
                         <div role="alert" class="alert alert-success">
                                 <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
@@ -75,20 +76,19 @@ $(window).load(function() {
                     ?>
 			 <div class="cart-header">
                                 <?php
-                                        $path = "<div class='close1'></div>";
+                                        $path = "<div class='close1'><i class='fa fa-times-circle-o' aria-hidden='true'></i>
+</div>";
                                          echo anchor('cart/remove/' . $item['rowid'], $path); 
                                     ?>
 				 
 				 <div class="cart-sec simpleCart_shelfItem">
-                 <table class="table table-borderless">
+                 <table class="table">
                         <thead>
       <tr>
         <th>Product</th>
-        <th>Price</th>
+        <th>Product Name</th>
         <th>Quqntity</th>
-        <th>Color</th>
-        <th>Size</th>
-        <th>Total</th>
+        
       </tr>
      
     </thead>
@@ -96,14 +96,14 @@ $(window).load(function() {
                        
       <tr>
       
-        <td>
+        <td style="width: 33.3%;">
 						<div class="cart-item cyc">
-                                                    <img class="quicklook" id="<?=$item['id']?>" src="<?=base_url();?>upload/product/<?=$item['id']?>/<?=$item['image']?>" style="width: 100%; height: 150px; cursor: pointer;" alt="">
+                                                    <img class="quicklook" id="<?=$item['id']?>" src="<?=base_url();?>upload/product/<?=$item['id']?>/<?=$item['image']?>" style="width: 100%%; height: 150px; cursor: pointer;" alt="">
                                                     </div>
-                                                    <p><a   style="text-transform: capitalize; cursor: pointer;"><?php echo $item['name']; ?></a></p></td>
-                                                     <td><span  style="color: #333333;">Rs. <?php echo number_format($item['subtotal'], 2) ?></span></td>
-                                                    <td><p>Qty: <span> <?php echo form_input('cart[' . $item['id'] . '][qty]', $item['qty'], 'maxlength="3" size="1" style="text-align: right"'); ?></span></p></td>
-                                                    <td><p> <?php
+                                                    </td>
+                                                     <td style="width: 33.3%;"><?php echo $item['name']; ?></td>
+                                                    <td style="width: 33.3%;">  <span> <?php echo form_input('cart[' . $item['id'] . '][qty]', $item['qty'], 'maxlength="3" size="1" style="text-align: right;background: #ddd;text-align: center;border: 1px solid #ddd;width: 40px;"'); ?></span></p></td>
+                                                    <?php /*?><td><p> <?php
                                                              $color =  $this->db->query("SELECT * FROM tbl_color where id = '".$item['color']."'");
                                                         foreach ($color->result() as $value) {?>
                                                               <span style="color: #333333;">Color:&nbsp;&nbsp; <span style="height: 16px; width: 16px; border-radius:50%;  background: #<?=$value->colorcode;?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
@@ -118,7 +118,7 @@ $(window).load(function() {
                                                             <td>
 															<span  style="color: #333333;">Rs. <?php echo number_format($item['subtotal'], 2) ?></span>
 																<?php $grand_total = $grand_total + $item['subtotal']; ?>
-                                                       </td>
+                                                       </td><?php */?>
                                                            
                                                     
 						
@@ -129,41 +129,20 @@ $(window).load(function() {
 					   <div class="clearfix"></div>
 											
 				  </div>
+                  <div class="col-md-6">
+                  </div>
                   
 			 </div>
                          
                          
                     <?php } 
                     ?>
-                         <div class="col-md-12" >
-                            <div class="col-md-8" style="text-align: right;">
-                                <!--Sub Total--> 
-                            </div>   
-                            <div class="col-md-2" style="text-align: left;">
-                                <b>Sub Total:</b>
-                            </div>   
-                             <div class="col-md-2" style="text-align: right;">
-                                Rs. <?= number_format($grand_total,2)?>
-                            </div>   
-                         </div>
-                         <div class="col-md-12">
-                             <div class="col-md-8" style="text-align: right;">
-                                <!--Sub Total--> 
-                            </div>   
-                            <div class="col-md-2" style="text-align: left;">
-                                <b>Total:</b>
-                            </div>   
-                            <div class="col-md-2" style="text-align: right;">
-                                Rs. <?= number_format($grand_total,2)?>
-                            </div>   
-                         </div>
-                         <br>
-                         <br>
-                         <br>
-                         <div class="col-md-12" style="text-align: right;">
+                         
+
+                         <div class="col-md-12" style="text-align: center;">
                                           <button type="submit" class="btn btn-danger my-cart-btn my-cart-b" >Update Cart</button>
                                             <button type="button" class="btn btn-danger my-cart-btn my-cart-b" onClick="clear_cart()" >Clear Cart</button>
-                                            <a href="<?=base_url();?>checkout" type="button" class="btn btn-danger my-cart-btn my-cart-b" >Checkout</a>
+                                            <!--<a href="<?=base_url();?>checkout" type="button" class="btn btn-danger my-cart-btn my-cart-b" >Checkout</a>-->
                                             <?php echo form_close(); ?>
                          </div>
                                
@@ -171,14 +150,14 @@ $(window).load(function() {
                    else
                     { ?>
                     <div class="container">
-  <div class="checkout-wrap">
+  <!--<div class="checkout-wrap">
     <ul id="checkout-bar" class="step4">
       <li class="step1"><span>Shipping</span></li>
       <li class="step2"><span>Order Overview</span></li>
       <li class="step3"><span>Payment</span></li>
       <li class="step4"><span>Success</span></li>
     </ul>
-  </div>
+  </div>-->
   <div class="space"></div>
   
 </div>
@@ -192,6 +171,57 @@ $(window).load(function() {
                  
                  
 		 </div>
+         <div class="col-md-6 col-sm-12 col-xs-12">
+         <div class="address-form">
+         <h2 class="text-center">Order Form</h2>
+         <form name="enquiry" action="" onSubmit="return validate_form();" method="post">
+       
+        <?php /*?><div class="form-group col-md-6" >
+        <label for="Product Name" class="enquiry-label">Product Name</label><br>
+          <input type="text" name="productname" readonly value="<?=$detail->product_name?>">
+
+         </div><?php */?>
+       
+        <div class="form-group col-md-12" >
+        <label for="name" class="enquiry-label">Full Name <span class="red">*</span></label><br>
+        <span class="col-md-6 npl">
+          <input type="text"  name="efname" value="" placeholder="First Name" required>
+          <div id="error"></div>
+          </span>
+          <span class="col-md-6 npr">
+          <input type="text" name="elname" value=""  placeholder="Last Name" required="">
+          <div id="error"></div>
+          </span>
+          </div>
+          
+       <div class="form-group col-md-12">
+        <label for="name" class="enquiry-label">Contact Number <span class="red">*</span></label><br>
+          <input type="text" name="ephone" value=""  required="">
+          <div id="error"></div>
+          </div>
+         <div class="form-group col-md-12">
+        <label for="name" class="enquiry-label">Email <span class="red">*</span></label><br>
+          <input type="email" name="eemail" value="" required="">
+          <div id="error"></div>
+          </div>
+          <br>
+          
+          <div class="form-group col-md-12" >
+        <label for="name" class="enquiry-label">Address</label><br>
+        <span class="addr">
+          <textarea  name="eaddress1" value="" placeholder=" "> </textarea>
+          </span>
+        
+          </div>
+          
+          <div class="form-group col-md-4 col-xs-6">
+         <input class="btn btn-danger" type="Submit"  value="Submit">
+         </div>
+
+
+        </form>
+        </div>
+        </div>
 		 </div>
 <!-- checkout -->	
 

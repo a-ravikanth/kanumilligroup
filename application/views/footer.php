@@ -178,7 +178,7 @@ $(".catimg").mouseover(function(){
 					 data: {catid:catarray[0],subcatid:catarray[1]},
 					 success: function (response) {
 							//alert('upload/subcategory/'+catarray[1]+'/'+response);
-							$('.cat-img-responsive img').prop('src', 'upload/subcategory/'+catarray[1]+'/'+response);
+							$('.cat-img-responsive img').prop('src', '<?php echo base_url();?>upload/subcategory/'+catarray[1]+'/'+response);
 					 }
 			 });
 });

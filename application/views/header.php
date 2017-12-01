@@ -16,10 +16,10 @@
    			</div>--><div class="col-md-4">
                 <h3 class="white-text wow fadeInLeft animated" wow-data-delay=".4s">Kanumilli Infra Solutions Pvt.Ltd.</h3>
             </div>
-
-                            <div class="top-right wow zoomIn animated animated" data-wow-delay=".7s" style="width: 350px;">
-				<?php /*?><ul>
-                                     <?php
+						<div class="col-md-4 col-md-offset-4 npl">
+                            <div class="top-right wow zoomIn animated animated" data-wow-delay=".7s" style="width:100%;">
+				<ul>
+                                    <?php /*?> <?php
                                     if(!empty($this->session->userdata('userid')))
                                     {?>
                                     <li  class="text"><a style="cursor: pointer; text-transform: capitalize;"><?php echo $this->session->userdata('firstname');?></a></li>
@@ -30,9 +30,11 @@
                                             <li  class="text"><a href="<?=base_url();?>register">Register</a></li>
                                    <?php }
                                     ?>
-                                    <li class="text"><a href="<?=base_url();?>login">login</a></li>
+                                    <li class="text"><a href="<?=base_url();?>login">login</a></li><?php */?>
 					<li><div class="cart box_1">
-                                                <a href="<?=base_url()?>cart">Cart
+                                               
+ <a href="<?=base_url()?>cart"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+ <span class="itm-cont">
                                                             <?php if(!empty($this->cart->contents()))
                                                             {
                                                                 echo $this->cart->total_items();
@@ -42,12 +44,14 @@
                                                                 echo "0";
                                                             }
                                                     ?>
+                                                    </span>
 
 							</a>
 
 							<div class="clearfix"> </div>
 						</div></li>
-				</ul><?php */?>
+				</ul>
+                </div>
 				</div>
 				<div class="clearfix"></div>
 			</div>
