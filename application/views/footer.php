@@ -105,7 +105,7 @@ $('#subscribe').on('click', function(e){
 				//regex.test(email);
         if (regex.test(email)) {
 					$.ajax({
-								 url: "<?php echo base_url();?>/dashboard/email_subscribe",
+								 url: "<?php echo base_url();?>dashboard/email_subscribe",
 								 type: "POST",
 								 data: {email:email},
 								 dataType: "json",
@@ -173,7 +173,7 @@ $(".catimg").mouseover(function(){
     var cat_subcat = this.id;
 		var catarray = cat_subcat.split('_');
 		$.ajax({
-					 url: "<?php echo base_url();?>/dashboard/getcatimage",
+					 url: "<?php echo base_url();?>dashboard/getcatimage",
 					 type: "POST",
 					 data: {catid:catarray[0],subcatid:catarray[1]},
 					 success: function (response) {
