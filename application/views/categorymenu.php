@@ -15,7 +15,7 @@
 	<!-- cart -->
 <!-- the jScrollPane script -->
 <script type="text/javascript" src="<?=base_url();?>js/jquery.jscrollpane.min.js"></script>
-		
+
 <!-- //the jScrollPane script -->
 <script type="text/javascript" src="<?=base_url();?>js/jquery.jscrollpane.min.js"></script>
 		<script type="text/javascript" id="sourcecode">
@@ -42,12 +42,12 @@
 <body>
 <?php  require_once 'header.php';?>
 
- 
-    	<div class="check-out">	 
+
+    	<div class="check-out">
 		<div class="container">
-			
+
 				<div class=" con-w3l agileinf">
-                                    <?php 
+                                    <?php
                                     foreach ($subcategory_list as $post)
                                     {
                                     ?>
@@ -58,12 +58,12 @@
 									</a>
 									<div class="mid-1">
                                                                             <div class="women" style="text-align: center; margin-bottom: 30px;">
-                                                                                    <h4><a href="<?=base_url();?>ProductList/<?=$category_id?>/<?=$post->subcat_id?>" style="text-transform: capitalize; text-align: center;"><?=$post->subcategory_name?></a></h4>							
+                                                                                    <h4><a href="<?=base_url();?>ProductList/<?=$category_id?>/<?=$post->subcat_id?>" style="text-transform: capitalize; text-align: center;"><?=$post->subcategory_name?></a></h4>
                                                                             </div>
 									</div>
 								</div>
 							</div>
-                                    <? }?>
+						<?php }?>
 							<div class="clearfix"></div>
 						 </div>
 		</div>
@@ -73,7 +73,6 @@
 <!--footer-->
 <?php require 'footer.php';?>
 <!-- //footer-->
-  			
+
 </body>
 </html>
-
