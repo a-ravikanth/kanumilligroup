@@ -58,6 +58,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="carousel-inner">
       <div class="item active">
          <div class="carousel-caption wow fadeInLeft animated animated" data-wow-delay=".5s">
+         <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center be-stage">
+                            <h2>
+                            	<span>Quality <strong>HIT.</strong> &nbsp; Budget <strong>FIT.</strong>  </span>
+
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span>Launching the new range of Bosch Power Tools.</span>
+                            </h3>
+                            <br>
+
+                        </div>
+                    </div>
         <h3 class="icon-container">
          <!-- <span class="glyphicon glyphicon-glass"></span>-->
         </h3>
@@ -71,8 +85,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
       <div class="item">
       <div class="carousel-caption wow fadeInRight animated animated" data-wow-delay=".5s">
+      <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center be-stage">
+                            <h2>
+                            	<span>Designed to out last <strong>all your demands</strong></span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span>You have extreme work environments.  We provide extreme solutions.</span>
+                            </h3>
+                            <br>
+
+                        </div>
+                    </div>
         <h3 class="icon-container">
-         <!-- <span class="glyphicon glyphicon-glass"></span>-->
+
         </h3>
         <h3>
 
@@ -83,6 +110,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
       <div class="item">
       <div class="carousel-caption wow fadeInLeft animated animated" data-wow-delay=".5s">
+      <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center be-stage">
+                            <h2>
+                            	<span>Bosch Accessories guarantee <strong>your success </strong></span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span>Bosch is the leading manufacturer of accessories for power tools.</span>
+                            </h3>
+                            <br>
+
+                        </div>
+                    </div>
         <h3 class="icon-container">
      <!--     <span class="glyphicon glyphicon-glass"></span>-->
         </h3>
@@ -94,6 +134,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
       <div class="item">
        <div class="carousel-caption wow fadeInRight animated animated" data-wow-delay=".5s">
+       <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center be-stage">
+                            <h2>
+                            	<span>High-frequency  <strong>production tools</strong></span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span> Top performance with the lowest possible power consumption.</span>
+                            </h3>
+                            <br>
+
+                        </div>
+                    </div>
         <h3 class="icon-container">
       <!--    <span class="glyphicon glyphicon-glass"></span>-->
         </h3>
@@ -144,24 +197,27 @@ has transformed the accessories sector with its brilliance. Experience the best.
 		<div class="row">
         <div class="grid">
            <div class=" col-md-6 col-sm-6 col-xs-12">
+             <a href="<?=base_url();?>CategoryList/6">
 					<figure class="effect-apollo  banner-effect-text">
 						<img class="img-responsive" src="<?=base_url();?>images/home-banner1.jpg" alt="">
 						<figcaption>
-							<h2>Bosch Tools</h2>
-							<p> Accessories guarantee your success</p>
-							
+							<h2>Bosch &nbsp; Tools</h2>
+							<p> Professional  Blue Power Tools</p>
+
 						</figcaption>
-					</figure>
+					</figure></a>
         </div>
          <div class=" col-md-6 col-sm-6 col-xs-12">
+         <a href="<?=base_url();?>CategoryList/7">
 					<figure class="effect-apollo banner-effect-text">
 						<img class="img-responsive" src="<?=base_url();?>images/home-banner2.jpg" alt="">
 						<figcaption>
-							<h2>Bosch Tools</h2>
-							<p> Accessories guarantee your success</p>
-							
+							<h2>Bosch &nbsp;  Accessories</h2>
+							<p> Accessories for Professional Power Tools</p>
+
 						</figcaption>
 					</figure>
+          </a>
         </div>
 				</div>
 
@@ -218,8 +274,8 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-text">Sale</span>
 												</span>
 
-                                 <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="cursor: pointer;" alt=""/> 
-                                   
+                                 <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="cursor: pointer;" alt=""/>
+
                                   <div class="galy-info">
 						 <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><p><?=$popular->product_name;?></p></a>
 						<div class="galry">
@@ -273,7 +329,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                                    <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/> 
+                                    <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>
                                     <?php /*?><div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
 					<div class="quick">
                                             <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
@@ -331,7 +387,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                                  <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/> 
+                                  <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>
                                    <?php /*?><div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
 					<div class="quick">
                                             <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
@@ -370,8 +426,8 @@ has transformed the accessories sector with its brilliance. Experience the best.
 				<div class="clearfix"></div>
 			</div>
             </div>
-            
-            
+
+
             </div>
 		</div>
 		</div>
@@ -407,11 +463,11 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                             <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
 					</div>
 					</div><?php */?>
-                                  
+
 					<div class="galy-info">
 						<a href="<?=base_url();?>ProductDetail/<?=$latest->id;?>"><p><?=$latest->product_name;?></p>  </a>
 						<div class="galry">
-						
+
 					<div class="clearfix"></div>
 					</div>
 					</div>
@@ -471,7 +527,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					</div>
 					</div><?php */?>
 
-                                  
+
 					<div class="galy-info">
 						 <h3 class="title"><a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"><p><?=$feature->product_name;?></p>  </a></h3>
 						<div class="galry">
@@ -526,10 +582,10 @@ has transformed the accessories sector with its brilliance. Experience the best.
 </html>
 
  <script type="text/javascript">
-            
+
 		$(document).ready(function() {
-                    
-           /* $("#header-modal").delegate("#addcartform","submit",function(e){       
+
+           /* $("#header-modal").delegate("#addcartform","submit",function(e){
                     var color = document.forms["productformcart"]["color"].value;
                     if (color == null || color == "") {
                             alert("Color must be Selected. Click for select.");
@@ -543,9 +599,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
                     }
             });
                     */
-                     
-                         
-                   
+
+
+
                   /*   $("#header-modal").delegate(".data_values","click",function(e){
                         var id = $(this).attr('id');
                         $('.data_values').removeClass('active1');
@@ -559,7 +615,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
                         $("#sizeProduct").val(id.slice(4));
                     });*/
 
-                    
+
                     $('.quicklook').click(function() {
                         var product_id = $(this).attr('id');
                         $.ajax({
@@ -569,9 +625,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                 dataType: "json",
                                 success: function(data) {
                                      $("#header-modal").html(data.success);
-                                      $('#header-modal').modal('show');  
+                                      $('#header-modal').modal('show');
                                 }
-                               
+
                         });
                 });
         });

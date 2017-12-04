@@ -12,8 +12,8 @@ class Categorymenu extends CI_Controller {
             $this->load->model('Subcategory_Model');
             $this->load->model('Product_Model',"product_model");
             $this->load->library('cart');
-            $this->load->helper('url');  
-            $this->load->helper('form');  
+            $this->load->helper('url');
+            $this->load->helper('form');
             $this->load->library('session');
             $this->load->database();
             $this->load->library('encrypt');
@@ -26,7 +26,7 @@ class Categorymenu extends CI_Controller {
             $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
             $data['subcategory_list'] = $this->Subcategory_Model->viewSubCategory($id);
             $data['category_id'] = $id;
-            
+
             foreach ($data['category_list'] as $cat)
             {
                 if($cat->id == $id)
@@ -34,8 +34,20 @@ class Categorymenu extends CI_Controller {
                     $data['category_title'] = $cat->category_name;
                 }
             }
-    
+
             $this->load->view('categorymenu',$data);
         }
-	
+
+        public function allcategories($cat_id)
+        {
+          $data['category_list'] = $this->Category_Model->get_list();
+          $data['subcate'] = $this->Subcategory_Model->viewSubCategoryList();
+          if($cat_id){
+            $data['cat_details'] = $this->Category_Model->editCategory($cat_id);
+            $data['subcatid'] = $cat_id;
+            $data['subcat_list'] = $this->Subcategory_Model->viewSubCategory($cat_id);
+          }
+          $this->load->view('tools',$data);
+        }
+
 }

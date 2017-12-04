@@ -113,6 +113,10 @@ $route['account/admin-delete/(:num)'] = 'admin/newadmin/DeleteAdmin/$1';
 $route['ProductList/(:num)/(:num)']	= 'product/allProductList/$1/$2';
 $route['ProductList/(:num)/(:num)/(:num)']	= 'product/allProductList/$1/$2';
 $route['ProductDetail/(:num)']	= 'product/oneProductdetail/$1';
+
+/*----------- categories list --------------------------------------------- */
+$route['CategoryList/(:num)']	= 'categorymenu/allcategories/$1';
+
 /*----------- Wishlist --------------------------------------------- */
 $route['delete-wishlist/(:num)']	= 'wishlist/DeleteWishlist/$1';
 $route['category/(:num)']	= 'categorymenu/index/$1';
