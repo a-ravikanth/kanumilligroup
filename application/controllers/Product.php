@@ -128,13 +128,13 @@ class Product extends CI_Controller {
 												<img style='border: 1px solid #ddd;' height=180px  width=100%  src='".$base."upload/product/".$post->id."/".$post->product_image."'>
 											</div>
 								</div>
-								
+
 								       <h3 style='text-transform: capitalize;color: #0D4B8e;font-size: 18px;'>".$post->product_name."</h3>
-									
+
 									<br>
 
 									<div class='add-to'>
-									
+
 								                <form action='".$base."cart/add' method='post' name='productformcart' id='addcartform'>
 												<div class='col-md-6'>
                                                                                     <input type='hidden' name='color' id='colorProduct' value=''>
@@ -149,9 +149,9 @@ class Product extends CI_Controller {
                                                                                     <a href='".$base."ProductDetail/".$post->id."' class='btn btn-danger my-cart-btn my-cart-btn1' style='margin: 10px;'>View Detail</a>
                                                                                     <button type='submit'  class=' btn btn-danger add-cart item_add' style='margin-right:20px;' name='action'>ADD TO CART</button>
 																					</div>
-																					
+
                                                                                 </form>
-										
+
 								</div>
 								<div class='clearfix'> </div>
 							</div>
@@ -188,10 +188,12 @@ class Product extends CI_Controller {
         'eq_fname'        => $this->input->post('fname'),
         'eq_lname'        => $this->input->post('lname'),
         'eq_product_name' => $this->input->post('product'),
+        'pro_id'          => $this->input->post('pro_id'),
         'eq_qty'          => $this->input->post('qty'),
         'eq_email'        => $this->input->post('email'),
         'eq_phone'        => $this->input->post('phone'),
-        'eq_address1'     => $this->input->post('add1')
+        'eq_address1'     => $this->input->post('add1'),
+        'eq_address2'     => $this->input->post('add2')
       );
       $res = $this->product_model->productEnquiry($eqdata);
       if($res){

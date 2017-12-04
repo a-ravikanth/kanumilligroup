@@ -144,12 +144,12 @@ has transformed the accessories sector with its brilliance. Experience the best.
 		<div class="row">
         <div class="grid">
            <div class=" col-md-6 col-sm-6 col-xs-12">
-					<figure class="effect-apollo  banner-effect-text banner-big-left">
+					<figure class="effect-apollo  banner-effect-text">
 						<img class="img-responsive" src="<?=base_url();?>images/home-banner1.jpg" alt="">
 						<figcaption>
 							<h2>Bosch Tools</h2>
 							<p> Accessories guarantee your success</p>
-							<a href="#">View more</a>
+							
 						</figcaption>
 					</figure>
         </div>
@@ -159,7 +159,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
 						<figcaption>
 							<h2>Bosch Tools</h2>
 							<p> Accessories guarantee your success</p>
-							<a href="#">View more</a>
+							
 						</figcaption>
 					</figure>
         </div>
@@ -186,7 +186,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
 		<div class="gallery">
                 <div class="container ">
 			<h3>Popular Products</h3>
-            <a href="#" class="nav-tabs-dropdown btn btn-block btn-primary">Tabs</a>
+            <a href="#" class="nav-tabs-dropdown btn btn-block btn-danger">Tabs</a>
             <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-tabs-horizontal nav-tabs-popular">
               <li class="active"><a class="link link--kumya" href="#htab1" data-toggle="tab"><span data-letters="All Products">All Products</span></a></li>
               <li><a class="link link--kumya" href="#htab2" data-toggle="tab"><span data-letters="Power Tools">Power Tools</span></a></li>
@@ -218,12 +218,8 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-text">Sale</span>
 												</span>
 
-                                 <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="cursor: pointer;" alt=""/>
-                                  <div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-					<div class="quick">
-                                            <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
-					</div>
-					</div>
+                                 <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="cursor: pointer;" alt=""/> 
+                                   
                                   <div class="galy-info">
 						 <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><p><?=$popular->product_name;?></p></a>
 						<div class="galry">
@@ -231,10 +227,16 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					<div class="clearfix"></div>
 					</div>
 					</div>
-					<div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$popular->id;?>" style="cursor: pointer;">
 
                                             <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
 
+					</div>
+                    <div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</p>
+					</div>
 					</div>
 
 
@@ -271,12 +273,12 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                                    <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>
-                                    <div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+                                    <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/> 
+                                    <?php /*?><div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
 					<div class="quick">
                                             <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
 					</div>
-					</div>
+					</div><?php */?>
                                     <div class="galy-info">
 						<a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><p><?=$popular->product_name;?></p></a>
 						<div class="galry">
@@ -284,10 +286,16 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					<div class="clearfix"></div>
 					</div>
 					</div>
-					<div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$popular->id;?>" style="cursor: pointer;">
 
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
 
+					</div>
+                    <div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</p>
+					</div>
 					</div>
 
 
@@ -323,12 +331,12 @@ has transformed the accessories sector with its brilliance. Experience the best.
 													<span class="sale-bg"></span>
 													<span class="sale-text">Sale</span>
 												</span>
-                                  <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>
-                                   <div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+                                  <img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/> 
+                                   <?php /*?><div class="gallery-info quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
 					<div class="quick">
                                             <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
 					</div>
-					</div>
+					</div><?php */?>
                                     <div class="galy-info">
 						 <a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"><p><?=$popular->product_name;?></p>  </a>
 						<div class="galry">
@@ -338,10 +346,16 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					<div class="clearfix"></div>
 					</div>
 					</div>
-					<div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$popular->id;?>" style="cursor: pointer;">
 
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
 
+					</div>
+                    <div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$popular->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</p>
+					</div>
 					</div>
 
 
@@ -356,96 +370,8 @@ has transformed the accessories sector with its brilliance. Experience the best.
 				<div class="clearfix"></div>
 			</div>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="htab4">
-			<div class="gallery-grids">
-                            <?php
-                                if(!empty($popular_product))
-                                {
-                                    foreach ($popular_product as $popular)
-                                    {
-
-                                        $id = $popular->id;
-                                        $name = $popular->product_name;
-                                        $description = $popular->product_description;
-                                        $price = $popular->product_price;
-                                        $image = $popular->product_image;
-                                    ?>
-				<div class="col-md-3 col-xs-12 col-sm-6  gallery-grid">
-                 <div class="wow flipInY animated gallery-popular">
-
-                                    <a><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style=" width: 100%; cursor: pointer;" alt=""/>   </a>
-
-
-					<div class="galy-info">
-						<p><?=$popular->product_name;?></p>
-						<div class="galry">
-						<div class="prices">
-                                                    <h5  class="item_price" style="color: #333333;">Rs. <?=$popular->product_price;?></h5>
-						</div>
-					<div class="clearfix"></div>
-					</div>
-					</div>
-                    <div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-
-                                             <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
-
-					</div>
-				</div>
-                </div>
-                             <?php }
-                                }
-                                else
-                                {
-                                     echo "No Item available!!";
-                                } ?>
-				<div class="clearfix"></div>
-			</div>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="htab5">
-			<div class="gallery-grids">
-                            <?php
-                                if(!empty($popular_product))
-                                {
-                                    foreach ($popular_product as $popular)
-                                    {
-
-                                        $id = $popular->id;
-                                        $name = $popular->product_name;
-                                        $description = $popular->product_description;
-                                        $price = $popular->product_price;
-                                        $image = $popular->product_image;
-                                    ?>
-				<div class="col-md-3 col-xs12 col-sm-6  gallery-grid">
-                <div class="wow flipInY animated gallery-popular">
-
-                                    <a><img class="quicklook product-catlog" id="<?=$popular->id;?>" src="<?=base_url();?>/upload/product/<?=$popular->id;?>/<?=$popular->product_image;?>" style="width: 100%; cursor: pointer;" alt=""/> </a>
-
-
-					<div class="galy-info">
-						<p><?=$popular->product_name;?></p>
-						<div class="galry">
-						<?php /*?><div class="prices">
-                                                    <h5  class="item_price" style="color: #000;font-size: 1em;font-weight: 600;">Rs. <?=$popular->product_price;?></h5>
-						</div><?php */?>
-					<div class="clearfix"></div>
-					</div>
-					</div>
-                    <div class="quicklook" id="<?=$popular->id;?>" style="cursor: pointer;">
-
-                                             <p><a href="<?=base_url();?>ProductDetail/<?=$popular->id;?>"> More Details </a></p>
-
-					</div>
-				</div>
-                </div>
-                             <?php }
-                                }
-                                else
-                                {
-                                     echo "No Item available!!";
-                                } ?>
-				<div class="clearfix"></div>
-			</div>
-            </div>
+            
+            
             </div>
 		</div>
 		</div>
@@ -476,25 +402,29 @@ has transformed the accessories sector with its brilliance. Experience the best.
 
                                    <p><img class="quicklook product-catlog" id="<?=$latest->id;?>" src="<?=base_url();?>/upload/product/<?=$latest->id;?>/<?=$latest->product_image;?>" style= "width: 100%; cursor: pointer;" alt=""/>
 
-<div class="gallery-info quicklook" id="<?=$latest->id;?>" style="cursor: pointer;">
+<?php /*?><div class="gallery-info quicklook" id="<?=$latest->id;?>" style="cursor: pointer;">
 					<div class="quick">
                                             <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
 					</div>
-					</div>
-
+					</div><?php */?>
+                                  
 					<div class="galy-info">
 						<a href="<?=base_url();?>ProductDetail/<?=$latest->id;?>"><p><?=$latest->product_name;?></p>  </a>
 						<div class="galry">
-						<?php /*?><div class="prices">
-						<h5  class="item_price" style="color: #000;font-size: 1em;font-weight: 600;">Rs. <?=$latest->product_price;?></h5>
-						</div><?php */?>
+						
 					<div class="clearfix"></div>
 					</div>
 					</div>
-                    <div class="quicklook" id="<?=$latest->id;?>" style="cursor: pointer;">
+                    <div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$latest->id;?>" style="cursor: pointer;">
 
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$latest->id;?>"> More Details </a></p>
 
+					</div>
+                    <div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$latest->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</p>
+					</div>
 					</div>
 				</div>
                 </div>
@@ -535,15 +465,15 @@ has transformed the accessories sector with its brilliance. Experience the best.
 												</span>
 
                                    <img class="quicklook product-catlog" id="<?=$feature->id;?>" src="<?=base_url();?>/upload/product/<?=$feature->id;?>/<?=$feature->product_image;?>" style="width: 100%; cursor: pointer;" alt=""/>
-                                    <div class="gallery-info quicklook" id="<?=$feature->id;?>" style="cursor: pointer;">
+                                    <?php /*?><div class="gallery-info quicklook" id="<?=$feature->id;?>" style="cursor: pointer;">
 					<div class="quick">
                                             <p><span class="glyphicon glyphicon-eye-open "  style="cursor: pointer;" aria-hidden="true"></span> Add to Cart</p>
 					</div>
-					</div>
+					</div><?php */?>
 
-
+                                  
 					<div class="galy-info">
-						 <a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"><p><?=$feature->product_name;?></p>  </a>
+						 <h3 class="title"><a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"><p><?=$feature->product_name;?></p>  </a></h3>
 						<div class="galry">
 						<?php /*?><div class="prices">
 						<h5 class="item_price" style="color: #000;font-size: 1em;font-weight: 600;">Rs. <?=$feature->product_price;?></h5>
@@ -551,10 +481,16 @@ has transformed the accessories sector with its brilliance. Experience the best.
 					<div class="clearfix"></div>
 					</div>
 					</div>
-                    <div class="quicklook" id="<?=$feature->id;?>" style="cursor: pointer;">
+                    <div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$feature->id;?>" style="cursor: pointer;">
 
                                              <p><a href="<?=base_url();?>ProductDetail/<?=$feature->id;?>"> More Details </a></p>
 
+					</div>
+                    <div class="quicklook col-md-6 col-sm-6 col-xs-6" id="<?=$feature->id;?>" style="cursor: pointer;">
+					<div class="quick">
+                                            <p><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</p>
+					</div>
 					</div>
 				</div>
                 </div>
@@ -590,10 +526,10 @@ has transformed the accessories sector with its brilliance. Experience the best.
 </html>
 
  <script type="text/javascript">
-
+            
 		$(document).ready(function() {
-
-           /* $("#header-modal").delegate("#addcartform","submit",function(e){
+                    
+           /* $("#header-modal").delegate("#addcartform","submit",function(e){       
                     var color = document.forms["productformcart"]["color"].value;
                     if (color == null || color == "") {
                             alert("Color must be Selected. Click for select.");
@@ -607,9 +543,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
                     }
             });
                     */
-
-
-
+                     
+                         
+                   
                   /*   $("#header-modal").delegate(".data_values","click",function(e){
                         var id = $(this).attr('id');
                         $('.data_values').removeClass('active1');
@@ -623,7 +559,7 @@ has transformed the accessories sector with its brilliance. Experience the best.
                         $("#sizeProduct").val(id.slice(4));
                     });*/
 
-
+                    
                     $('.quicklook').click(function() {
                         var product_id = $(this).attr('id');
                         $.ajax({
@@ -633,9 +569,9 @@ has transformed the accessories sector with its brilliance. Experience the best.
                                 dataType: "json",
                                 success: function(data) {
                                      $("#header-modal").html(data.success);
-                                      $('#header-modal').modal('show');
+                                      $('#header-modal').modal('show');  
                                 }
-
+                               
                         });
                 });
         });

@@ -157,7 +157,7 @@ color:red;
 													echo form_hidden('price', $price);
                                                     echo form_hidden('image', $image);
                                             ?>
-                                           <button type="submit" class="add-cart item_add button button--moema button--border-thick button--size-s" name="action">ADD TO CART</button>
+                                           <button type="submit" class="add-cart item_add button button--moema button--border-thick button--size-s" name="action" style="font-weight: 400;">Add To Cart</button>
                                               </form>
 
                                               </div>
@@ -407,6 +407,7 @@ color:red;
         <div class="form-group col-md-6" >
         <label for="Product Name" class="enquiry-label">Product Name</label><br>
           <input type="text" name="productname" readonly value="<?=$detail->product_name?>">
+          <input type="hidden" name="pro_id" value="<?=$detail->id?>">
 
          </div>
        <div class="form-group col-md-6" >
@@ -438,12 +439,19 @@ color:red;
           <div class="form-group col-md-12" >
         <label for="name" class="enquiry-label">Address</label><br>
         <span class="addr">
-          <textarea  name="eaddress1" value="" placeholder=" "> </textarea>
-          </span>        
+          <textarea  name="eaddress1" value="" placeholder=" "></textarea>
+          </span>
+
           </div>
-          
-          
-        <div class="form-group col-md-3">
+          <div class="form-group col-md-12" >
+        <label for="Address" class="enquiry-label"> Delivery Address</label><br>
+        <span class="addr">
+          <textarea  name="eaddress2" value="" placeholder=" "></textarea>
+          </span>
+
+          </div>
+
+          <div class="form-group col-md-3">
          <input class="btn btn-danger" type="Submit"  value="Submit">
          </div>
 
@@ -556,7 +564,7 @@ color:red;
 						url: "<?php echo base_url(); ?>" + "product/submitEqform",
 						async: false,
 						dataType: 'json',
-						data: {fname: enquiry.efname.value, lname:enquiry.elname.value, qty:enquiry.equantity.value, product:enquiry.productname.value,email:enquiry.eemail.value,phone:enquiry.ephone.value,add1:enquiry.eaddress1.value },
+						data: {fname: enquiry.efname.value, lname:enquiry.elname.value, qty:enquiry.equantity.value, product:enquiry.productname.value,pro_id:enquiry.pro_id.value,email:enquiry.eemail.value,phone:enquiry.ephone.value,add1:enquiry.eaddress1.value,add2:enquiry.eaddress2.value },
 						success: function(res) {
 						if (res)
 						{

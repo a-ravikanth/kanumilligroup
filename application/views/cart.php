@@ -50,7 +50,7 @@ $(window).load(function() {
                                 <strong>Well done!</strong>
                                 <?=$this->session->flashdata('SUCCESSMSG')?>
                         </div>
-        <?php } ?>	
+        <?php } ?>
                     <?php
                     if($cart = $this->cart->contents()){ ?>
                         <h2>My Shopping Bag (<?php if(!empty($this->cart->contents()))
@@ -78,9 +78,9 @@ $(window).load(function() {
                                 <?php
                                         $path = "<div class='close1'><i class='fa fa-times-circle-o' aria-hidden='true'></i>
 </div>";
-                                         echo anchor('cart/remove/' . $item['rowid'], $path); 
+                                         echo anchor('cart/remove/' . $item['rowid'], $path);
                                     ?>
-				 
+
 				 <div class="cart-sec simpleCart_shelfItem">
                  <table class="table">
                         <thead>
@@ -88,14 +88,14 @@ $(window).load(function() {
         <th>Product</th>
         <th>Product Name</th>
         <th>Quqntity</th>
-        
+
       </tr>
-     
+
     </thead>
                        <tbody>
-                       
+
       <tr>
-      
+
         <td style="width: 33.3%;">
 						<div class="cart-item cyc">
                                                     <img class="quicklook" id="<?=$item['id']?>" src="<?=base_url();?>upload/product/<?=$item['id']?>/<?=$item['image']?>" style="width: 100%%; height: 150px; cursor: pointer;" alt="">
@@ -119,25 +119,25 @@ $(window).load(function() {
 															<span  style="color: #333333;">Rs. <?php echo number_format($item['subtotal'], 2) ?></span>
 																<?php $grand_total = $grand_total + $item['subtotal']; ?>
                                                        </td><?php */?>
-                                                           
-                                                    
-						
+
+
+
 					   </tr>
                        </tbody>
                        </table>
-                       
+
 					   <div class="clearfix"></div>
-											
+
 				  </div>
                   <div class="col-md-6">
                   </div>
-                  
+
 			 </div>
-                         
-                         
-                    <?php } 
+
+
+                    <?php }
                     ?>
-                         
+
 
                          <div class="col-md-12" style="text-align: center;">
                                           <button type="submit" class="btn btn-danger my-cart-btn my-cart-b" >Update Cart</button>
@@ -145,7 +145,7 @@ $(window).load(function() {
                                             <!--<a href="<?=base_url();?>checkout" type="button" class="btn btn-danger my-cart-btn my-cart-b" >Checkout</a>-->
                                             <?php echo form_close(); ?>
                          </div>
-                               
+
                  <?php }
                    else
                     { ?>
@@ -159,7 +159,7 @@ $(window).load(function() {
     </ul>
   </div>-->
   <div class="space"></div>
-  
+
 </div>
                         <tr>
                             <td class="product-name" colspan="100%" style="text-align: center;">
@@ -168,20 +168,20 @@ $(window).load(function() {
                         </tr>
                    <?php }
                     ?>
-                 
-                 
+
+
 		 </div>
          <div class="col-md-6 col-sm-12 col-xs-12">
          <div class="address-form">
          <h2 class="text-center">Order Form</h2>
-         <form name="enquiry" action="" onSubmit="return validate_form();" method="post">
-       
+         <form name="enquiry" action="" method="post">
+
         <?php /*?><div class="form-group col-md-6" >
         <label for="Product Name" class="enquiry-label">Product Name</label><br>
           <input type="text" name="productname" readonly value="<?=$detail->product_name?>">
 
          </div><?php */?>
-       
+
         <div class="form-group col-md-12" >
         <label for="name" class="enquiry-label">Full Name <span class="red">*</span></label><br>
         <span class="col-md-6 npl">
@@ -193,7 +193,7 @@ $(window).load(function() {
           <div id="error"></div>
           </span>
           </div>
-          
+
        <div class="form-group col-md-12">
         <label for="name" class="enquiry-label">Contact Number <span class="red">*</span></label><br>
           <input type="text" name="ephone" value=""  required="">
@@ -205,17 +205,24 @@ $(window).load(function() {
           <div id="error"></div>
           </div>
           <br>
-          
+
           <div class="form-group col-md-12" >
-        <label for="name" class="enquiry-label">Address</label><br>
+        <label for="Address" class="enquiry-label">Address</label><br>
         <span class="addr">
           <textarea  name="eaddress1" value="" placeholder=" "> </textarea>
           </span>
-        
+
           </div>
-          
+          <div class="form-group col-md-12" >
+        <label for="Address" class="enquiry-label"> Delivery Address</label><br>
+        <span class="addr">
+          <textarea  name="eaddress2" value="" placeholder=" "> </textarea>
+          </span>
+
+          </div>
+
           <div class="form-group col-md-4 col-xs-6">
-         <input class="btn btn-danger" type="Submit"  value="Submit">
+         <input class="btn btn-danger" type="button" onClick="return submit_enq_form();"  value="Submit">
          </div>
 
 
@@ -223,7 +230,7 @@ $(window).load(function() {
         </div>
         </div>
 		 </div>
-<!-- checkout -->	
+<!-- checkout -->
 
 </div>
  <div class="modal fade" id="header-modal" aria-hidden="true"></div>
@@ -233,7 +240,7 @@ $(window).load(function() {
                 require_once 'footer.php';
                 ?>
 	<!--footer-->
-			
+
 </body>
 </html>
 <script type="text/javascript">
@@ -246,5 +253,60 @@ $(window).load(function() {
             }
         }
 </script>
+<script type="text/javascript">
+function submit_enq_form() {
+        if (enquiry.efname.value=="") {
+            document.getElementById("error").innerHTML ="Please Enter  Your FirstName";
+    document.enquiry.efname.focus();
+             return false;
+     }
+      if (!isNaN(enquiry.efname.value)){
+  document.getElementById("error").innerHTML ="Please Enter Only Characters";
+    document.enquiry.efname.select();
+             return false;
+  }
+   if (enquiry.elname.value=="") {
+            document.getElementById("error").innerHTML ="Please Enter  Your LastName";
+    document.enquiry.elname.focus();
+             return false;
+     }
+      if (!isNaN(enquiry.elname.value)){
+  document.getElementById("error").innerHTML ="Please Enter Only Characters";
+    document.enquiry.elname.select();
+             return false;
+  }
 
+  if(!(/^\d{10}$/).test(enquiry.ephone.value)){
+   document.getElementById("error_phnum").innerHTML ="Please Enter  Correct Phone Number";
+    document.enquiry.ephone.focus();
+            return false;
+  }
+     //alert("Form Submitted Successfully");return false;
+     //alert(enquiry.equantity.value);
+     var stat;
+     $.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?>" + "cart/submitEqform",
+        async: false,
+        dataType: 'json',
+        data: {fname: enquiry.efname.value, lname:enquiry.elname.value, email:enquiry.eemail.value,phone:enquiry.ephone.value,add1:enquiry.eaddress1.value,add2:enquiry.eaddress2.value },
+        success: function(res) {
+        if (res)
+        {
+        // Show Entered Value
+        if(res.status)
+        {
+          alert(res.message);
+					clear_cart();
+          stat = true;
+        }else{
+          alert(res.message);
+          stat = false;
+        }
+        }
+        }
+    });
+    return stat;
 
+    }
+</script>
