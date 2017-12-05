@@ -66,11 +66,12 @@ Hotline: +91 9100725555</div>
                     <hr>
 					<ul>
 
-                                                <li><a href="<?=base_url()?>term">Terms & Conditions</a></li>
-                                                <li><a href="<?=base_url()?>faqs">Faqs</a></li>
+                                               <?php /*?> <li><a href="<?=base_url()?>term">Terms & Conditions</a></li>
+                                                <li><a href="<?=base_url()?>faqs">Faqs</a></li><?php */?>
 
                                                 <li><a href="<?=base_url()?>contact">Contact</a></li>
 					</ul>
+                    <div class="social-links"> <a href="#."><i class="fa fa-facebook fa-1x"></i></a> <a href="#."><i class="fa fa-twitter fa-1x"></i></a>  <a href="#."><i class="fa fa-google fa-1x"></i></a> </div>
 					</div>
 
 
@@ -82,9 +83,9 @@ Hotline: +91 9100725555</div>
         <div class="footer-bottom">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+      <div class="col-md-7 col-md-offset-3 col-sm-12 col-xs-12">
         <small class="copyright">
-    Copyright @ 2017 by <span> <a href="#"> Kanumilli Infra Solutions Pvt.Ltd.</a></span>  All Rights Reserved
+   © 2017 Kanumilli Group. All Rights Reserved | Designed &amp; Developed by <a target="_blank" href="http://www.ingresos.in">Ingresos Pvt.Ltd.</a>
 </small>      </div>
 
     </div>

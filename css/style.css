@@ -1597,9 +1597,11 @@ width:30%;
 	padding: 0.545em;
 }
 .product-info-cust h4{
-	color: #caccce;
-    font-size: 0.95em;
-    text-transform: uppercase;
+	color: #000;
+margin: 0.5em 0 0;
+text-transform: capitalize;
+line-height: 21px;
+font-size: 14px;
 }
 .product-info-cust p{
 	 margin:5px 0;
@@ -3976,6 +3978,7 @@ link.link--kumya {
 .grid figure h2,
 .grid figure p {
 	margin: 0;
+
 }
 
 .grid figure p {
@@ -4087,4 +4090,31 @@ margin-top: 35px;
     background: #fdd01b;
     color: #000;
     transition: ease-in-out 0.5s;
+}
+.be-stage h2 span {
+   
+    padding: 0.5em;
+    margin: 1em;
+    background: rgba(6, 74, 111, 0.9);
+}
+.be-stage h3{
+margin: 1em;
+}
+.be-stage h3 span {
+
+    padding: 0.5em;
+    margin: 1em;
+    background: rgba(6, 74, 111, 0.9);
+}
+.carousel-indicators li {
+    border: 1px solid #0D4B8e !important;
+
+}
+.social-links {
+    margin-top: 10px;
+}
+.social-links a {
+    margin-right: 20px;
+    font-size: 18px;
+    color: #333333;
 }

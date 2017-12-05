@@ -129,7 +129,7 @@ class Product extends CI_Controller {
 											</div>
 								</div>
 
-								       <h3 style='text-transform: capitalize;color: #0D4B8e;font-size: 18px;'>".$post->product_name."</h3>
+								       <h3 style='text-transform: capitalize;color: #0D4B8e;font-size: 18px; margin-left:15px;'>".$post->product_name."</h3>
 
 									<br>
 

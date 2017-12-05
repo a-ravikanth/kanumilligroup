@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Developer</title>
+<title>Kanumilli Infra</title>
 <link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="<?=base_url();?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="<?=base_url();?>css/owl.carousel.css" rel="stylesheet">
@@ -30,14 +30,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 <style>
-    .active
+/*    .active
     {
         border: 2px solid #ff5f00;
     }
     .active_size
     {
         border: 2px solid #ff5f00;
-    }
+    }*/
     .modal-header {
     border-bottom: 0px solid #e5e5e5;
     min-height: 16.4286px;
@@ -325,8 +325,8 @@ color:red;
 <!-- collapse -->
 		<div class="related-products">
 			<div class="container">
-				<h3>Related Products</h3>
-				<div class="product-model-sec single-product-grids">
+				<h3 style="color: #0D4B8e;">Related Products</h3>
+				<div class=col-md-12 col-sm-12 product-model-sec wow fadeInUp animated animated" data-wow-delay=".5s"">
                                      <?php
                                         foreach ($related_product_detail as $post)
                                         {
@@ -347,20 +347,20 @@ color:red;
                                             ?>
 
 
-
-                                    	 <div class="product-grid  col-md-3 c0l-sm-6 col-xs-12"  >
-						<div class="more-product"><span> </span></div>
+										<div class="more products col-md-3 col-sm-6 col-xs-12">
+                                    	 <div class="product-grid"  >
+                                         <span class="onsale">
+													<span class="sale-bg"></span>
+													<span class="sale-text">Sale</span>
+												</span>
+						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-                                                    <img class=""   src="<?=base_url();?>/upload/product/<?=$value->id;?>/<?=$value->product_image;?>" style="width: 100%; height: 300px; cursor: pointer;"  alt="">
-                                                    <div class="b-wrapper quicklook" id="<?=$post->id;?>" style="cursor: pointer;">
-							<h3 class="">
-							<button>Add to Cart</button>
-							</h3>
-							</div>
+                                                    <img class=""     src="<?=base_url();?>/upload/product/<?=$value->id;?>/<?=$value->product_image;?>"  alt="">
+                                                    
 						</div>
 						<div class="product-info simpleCart_shelfItem">
-							<div class="product-info-cust prt_name">
-                                                            <h4 style="color: #ff5f00; text-transform: capitalize; font-size: 14px;line-height: 21px;"><?=$value->product_name;?></h4>
+							<div class="product-info-cust prt_name galy-info">
+                                                           <a href="<?=base_url();?>ProductDetail/<?=$id;?>"> <h4 style="color: #000;line-height: 21px; text-transform: capitalize; font-size: 14px;line-height: 21px;"><?=$value->product_name;?></h4></a>
 								<?php /*?><span class="item_price">Rs. <?=$value->product_price;?></span><?php */?>
 
 								<!--<input type="text" class="item_quantity" value="1" />-->
@@ -371,8 +371,12 @@ color:red;
 								<!--<input type="button" class="item_add items" value="+">-->
 								<div class="clearfix"> </div>
 							</div>
+                            <div class="">
+                              <h4 class="blue-text text-center"><a href="<?=base_url();?>ProductDetail/<?=$id;?>">More Details</a></h4>
+                                </div>
 						</div>
 					</div>
+                    </div>
                                      <?php } }
                                                         else
                                                         {

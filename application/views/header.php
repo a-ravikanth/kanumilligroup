@@ -1,3 +1,4 @@
+ <link rel="icon" href="<?=base_url();?>img/favicon-16x16.png" type="image/png" sizes="16x16"> 
 <link href="<?=base_url();?>css/wow.css" rel="stylesheet">
 <link href="<?=base_url();?>css/font-awesome.min.css" rel="stylesheet">
 <link href="owl.carousel.css" rel="stylesheet">

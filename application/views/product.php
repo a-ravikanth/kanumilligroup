@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Developer</title>
+<title>Kanumilli Infra</title>
 <link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="<?=base_url();?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="<?=base_url();?>css/owl.carousel.css" rel="stylesheet">
