@@ -87,7 +87,7 @@ $(window).load(function() {
       <tr>
         <th>Product</th>
         <th>Product Name</th>
-        <th>Quqntity</th>
+        <th>Quantity</th>
 
       </tr>
 
@@ -188,7 +188,7 @@ $(window).load(function() {
           <input type="text"  name="efname" value="" placeholder="First Name" required>
           <div id="error"></div>
           </span>
-          <span class="col-md-6 npr">
+          <span class="col-md-6 npd">
           <input type="text" name="elname" value=""  placeholder="Last Name" required="">
           <div id="error"></div>
           </span>
@@ -197,26 +197,26 @@ $(window).load(function() {
        <div class="form-group col-md-12">
         <label for="name" class="enquiry-label">Contact Number <span class="red">*</span></label><br>
           <input type="text" name="ephone" value=""  required="">
-          <div id="error"></div>
+          <div id="error_phnum"></div>
           </div>
          <div class="form-group col-md-12">
         <label for="name" class="enquiry-label">Email <span class="red">*</span></label><br>
           <input type="email" name="eemail" value="" required="">
-          <div id="error"></div>
+          <div id="error_email"></div>
           </div>
           <br>
 
           <div class="form-group col-md-12" >
         <label for="Address" class="enquiry-label">Address</label><br>
         <span class="addr">
-          <textarea  name="eaddress1" value="" placeholder=" "> </textarea>
+          <textarea  name="eaddress1" value="" placeholder=" " required=""> </textarea>
           </span>
 
           </div>
-          <div class="form-group col-md-12" >
+          <div class="form-group col-md-12">
         <label for="Address" class="enquiry-label"> Delivery Address</label><br>
         <span class="addr">
-          <textarea  name="eaddress2" value="" placeholder=" "> </textarea>
+          <textarea  name="eaddress2" value="" placeholder=" " required=""> </textarea>
           </span>
 
           </div>
@@ -277,10 +277,15 @@ function submit_enq_form() {
   }
 
   if(!(/^\d{10}$/).test(enquiry.ephone.value)){
-   document.getElementById("error_phnum").innerHTML ="Please Enter  Correct Phone Number";
+   document.getElementById("error_phnum").innerHTML ="Please Enter  10 Digits  Number";
     document.enquiry.ephone.focus();
             return false;
   }
+  if (enquiry.eemail.value=="") {
+            document.getElementById("error_email").innerHTML ="Please Enter  Your Mail Id";
+    document.enquiry.eemail.focus();
+             return false;
+     }
      //alert("Form Submitted Successfully");return false;
      //alert(enquiry.equantity.value);
      var stat;

@@ -7,7 +7,7 @@ class Product extends CI_Controller {
 	{
             parent::__construct();
             //load model
-            $this->load->model('dashboard_model');
+            $this->load->model('Dashboard_Model');
             $this->load->model('Category_Model');
             $this->load->model('Subcategory_Model');
             $this->load->model('Product_Model',"product_model");
@@ -145,10 +145,10 @@ class Product extends CI_Controller {
                                                                                     <input type='hidden' name='image' value=".$post->product_image.">
                                                                                     Qty<input min='1' type='number' id='quantity' name='qty' value='1' class='form-control input-small' style='width:60px;'>
 																					</div>
-																					<div class='col-md-12' style='text-align:center;'>
-                                                                                    <a href='".$base."ProductDetail/".$post->id."' class='btn btn-danger my-cart-btn my-cart-btn1' style='margin: 10px;'>View Detail</a>
-                                                                                    <button type='submit'  class=' btn btn-danger add-cart item_add' style='margin-right:20px;' name='action'>ADD TO CART</button>
-																					</div>
+																					<div class='col-md-12' >
+                                                                                    <a href='".$base."ProductDetail/".$post->id."' class='btn btn-danger my-cart-btn my-cart-btn1' style='margin: 10px 0px'>View Detail</a>
+                                                                                    <button type='submit'  class=' btn btn-danger add-cart item_add' style='margin: 10px 10px 10px 0px'; name='action'>ADD TO CART</button>
+                                                                                    </div>
 
                                                                                 </form>
 

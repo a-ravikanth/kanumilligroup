@@ -78,7 +78,7 @@ $(window).load(function() {
 						<h4 class="wow fadeIndown animated animated" data-wow-delay=".5s" >DROP US A LINE </h4>
 						<form name="contact" id="contact" method="post" action="<?php echo base_url();?>contact/sendemail">
 							<input name="name" class="wow fadeIndown animated animated" data-wow-delay=".6s" placeholder="Name" required="" style="visibility: visible; animation-delay: 0.6s;" type="text">
-							<input name="email" class="wow fadeIndown animated animated" data-wow-delay=".7s" placeholder="Email" required="" style="visibility: visible; animation-delay: 0.7s;" type="text">
+							<input name="email" class="wow fadeIndown animated animated" data-wow-delay=".7s" placeholder="Email" required="" style="visibility: visible; animation-delay: 0.7s;" type="email">
 							<input name="subject" class="wow fadeIndown animated animated" data-wow-delay=".8s" placeholder="Subject" required="" style="visibility: visible; animation-delay: 0.8s;" type="text">
 							<textarea name="message" class="wow fadeIndown animated animated" data-wow-delay=".8s" placeholder="Message" required="" style="visibility: visible; animation-delay: 0.8s;"></textarea>
 							<input class="wow fadeIndown animated animated" data-wow-delay=".9s" value="SEND" style="visibility: visible; animation-delay: 0.9s;" type="submit">
@@ -97,8 +97,8 @@ $(window).load(function() {
 					</div>
 					<div class="address-info wow fadeInRight animated animated" data-wow-delay=".6s" >
 						<h4>MAIL</h4>
-						<p><a href="info@kanumilligroup.com"> info@kanumilligroup.com</a></p>
-						<p><a href="prasad@kanumilligroup.com"> prasad@kanumilligroup.com</a></p>
+						<p> info@kanumilligroup.com</p>
+						<p> prasad@kanumilligroup.com</p>
 					</div>
 				</div>
 			</div>

@@ -118,6 +118,7 @@
 
 					</div>
                                     <?php } }?>
+                                    <div class="clearfix"> </div>
                      <div class="col-md-12">
                             <div style="text-align: right;">
                         <ul class="pagination" style="">

@@ -7,7 +7,7 @@ class Cart extends CI_Controller {
 	{
             parent::__construct();
             //load model
-            $this->load->model('dashboard_model');
+            $this->load->model('Dashboard_Model');
             $this->load->model('Category_Model');
             $this->load->model('Subcategory_Model');
             $this->load->model('Product_Model',"product_model");

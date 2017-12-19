@@ -408,6 +408,7 @@ color:red;
          <form name="enquiry" action="" onSubmit="return validate_form();" method="post">
         <div class="modal-body">
         <div class="row">
+        <div class="col-md-12">
         <div class="form-group col-md-6" >
         <label for="Product Name" class="enquiry-label">Product Name</label><br>
           <input type="text" name="productname" readonly value="<?=$detail->product_name?>">
@@ -424,7 +425,7 @@ color:red;
           <input type="text"  name="efname" value="" placeholder="First Name" required>
           <div id="error"></div>
           </span>
-          <span class="col-md-6 npr">
+          <span class="col-md-6 npd">
           <input type="text" name="elname" value=""  placeholder="Last Name" required="">
           <div id="error"></div>
           </span>
@@ -438,19 +439,19 @@ color:red;
           <div class="form-group col-md-6">
         <label for="name" class="enquiry-label">Contact Number <span class="red">*</span></label><br>
           <input type="text" name="ephone" value=""  required="">
-          <div id="error"></div>
+          <div id="error_phnum"></div>
           </div>
           <div class="form-group col-md-12" >
         <label for="name" class="enquiry-label">Address</label><br>
         <span class="addr">
-          <textarea  name="eaddress1" value="" placeholder=" "></textarea>
+          <textarea  name="eaddress1" value="" placeholder=" " required=""></textarea>
           </span>
 
           </div>
           <div class="form-group col-md-12" >
         <label for="Address" class="enquiry-label"> Delivery Address</label><br>
         <span class="addr">
-          <textarea  name="eaddress2" value="" placeholder=" "></textarea>
+          <textarea  name="eaddress2" value="" placeholder=" " required=""></textarea>
           </span>
 
           </div>
@@ -458,7 +459,7 @@ color:red;
           <div class="form-group col-md-3">
          <input class="btn btn-danger" type="Submit"  value="Submit">
          </div>
-
+		</div>
         </div>
         </div>
         </form>

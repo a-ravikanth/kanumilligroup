@@ -707,6 +707,8 @@ float: left;
 }
 .single-info{
 	padding: 4em 0em 4em 0em;
+	max-width: 100%;
+    overflow: hidden;
 }
 .single-grid1 h2 {
     font-size: 2.5em;
@@ -1499,7 +1501,7 @@ i.sele{
 	background:#0D4B8e ;
 }
 /* lt-ie9 */
-.b-animate-go:hover .b-animate{
+.b-animate-go:hover .b-animate,.b-animate-go:focus .b-animate{
 	visibility:visible;
 }
 .b-from-left{
@@ -1512,6 +1514,7 @@ i.sele{
 }
 .b-animate-go:hover .b-from-left{
 	left:0;
+	cursor:pointer;
 }
 .details{
 width:30%;
@@ -1550,6 +1553,7 @@ width:30%;
 .product-img img {
 	width: 100%;
 	padding:1em 0.5em;
+	height: 180px;
 }
 .product-info-cust {
 	/*padding: 0.8em 1.2em;*/
@@ -2231,7 +2235,7 @@ a.button {
     font-size: 0.95em;
 }
 .gallery {
-    padding: 3em 0 0;
+    padding: 0em 0 1em 0em;
 }
 .gallery-grid {
     float: left;
@@ -3468,16 +3472,22 @@ padding:0em 3em 1em 3em;}
     background-size: cover;
     padding: 5em 0;
 }
+.address-right{
+	max-width: 100%;
+    overflow: hidden;
+	}
 .address-grid {
     background-color: #0D4B8e;
-    padding: 4em;
+    padding: 4em 1.5em;
+	clear: both;
+	letter-spacing: 0px;
 }
 .address h4 {
     font-size: 1.8em;
     color: #fff;
     margin-bottom: 0.7em;
 }
-.address input[type="text"] {
+.address input[type="text"], .address input[type="email"]{
     width: 100%;
     color: #fff;
     background: none;
@@ -3493,7 +3503,7 @@ padding:0em 3em 1em 3em;}
 }
 .address-info {
     background-color: #0D4B8e;
-    padding: 3em 4em;
+    padding: 3em 1.5em;
 }
 .address-info h4 {
     margin-bottom: .4em;
@@ -3504,6 +3514,7 @@ padding:0em 3em 1em 3em;}
     font-size: 1em;
     line-height: 1.8em;
     letter-spacing: 1px;
+	
 }
 .address-info.address-mdl {
     margin: 2em 0;
@@ -3611,6 +3622,8 @@ thead,tbody {
 	line-height:41px;
 }
 th {
+	height: 42px;
+    line-height: 24px;
     color: #0d4b8e;
 	text-align: center;
 }
@@ -3740,6 +3753,8 @@ padding-right:0px !important;}
     background-color: transparent;
 }
 .product-img:hover {
+	-webkit-transition: ease all 0.5s;
+	-moz-transition: ease all 0.5s;
     transition: ease all 0.5s;
     color: rgba(0,0,0,0.6);
 }
@@ -4118,3 +4133,7 @@ margin: 1em;
     font-size: 18px;
     color: #333333;
 }
+#error_phnum, #error_email{
+	color:red;
+	font-size:12px;
+	}
